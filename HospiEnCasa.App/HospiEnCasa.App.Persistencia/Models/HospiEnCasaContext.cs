@@ -29,6 +29,8 @@ namespace HospiEnCasa.App.Persistencia.Models
         public virtual DbSet<SignosVitale> SignosVitales { get; set; }
         public virtual DbSet<Sugerencia> Sugerencias { get; set; }
 
+        
+        // Repositorio de configuracion
         public IConfiguration Configuration { get; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
