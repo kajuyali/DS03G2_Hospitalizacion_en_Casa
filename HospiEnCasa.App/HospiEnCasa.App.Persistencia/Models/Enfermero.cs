@@ -15,9 +15,9 @@ namespace HospiEnCasa.App.Persistencia.Models
         public int IdEnfer { get; set; }
         public string Especialidad { get; set; }
         public string Registro { get; set; }
-        public string DocumentoPersona { get; set; }
+        public int IdPersona { get; set; }
 
-        public virtual Persona DocumentoPersonaNavigation { get; set; }
+        public virtual Persona IdPersonaNavigation { get; set; }
         public virtual ICollection<Asignado> Asignados { get; set; }
     }
 }
