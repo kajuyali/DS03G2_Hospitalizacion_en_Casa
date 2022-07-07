@@ -11,9 +11,9 @@ namespace HospiEnCasa.App.Persistencia.Models
         public string Parentesco { get; set; }
         public string Correo { get; set; }
         public int IdPaciente { get; set; }
-        public string DocumentoPersona { get; set; }
+        public int IdPersona { get; set; }
 
-        public virtual Persona DocumentoPersonaNavigation { get; set; }
         public virtual Paciente IdPacienteNavigation { get; set; }
+        public virtual Persona IdPersonaNavigation { get; set; }
     }
 }

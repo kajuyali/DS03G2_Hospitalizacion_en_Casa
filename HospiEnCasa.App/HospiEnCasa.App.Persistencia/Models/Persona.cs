@@ -15,9 +15,10 @@ namespace HospiEnCasa.App.Persistencia.Models
             Pacientes = new HashSet<Paciente>();
         }
 
-        public string Documento { get; set; }
-        public string Nombre { get; set; }
-        public string Apellido { get; set; }
+        public int IdPersona { get; set; }
+        public string Id { get; set; }
+        public string Nombres { get; set; }
+        public string Apellidos { get; set; }
         public string Telefono { get; set; }
         public string Genero { get; set; }
 

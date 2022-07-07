@@ -3,8 +3,6 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.Extensions.Configuration;
 
-#nullable disable
-
 namespace HospiEnCasa.App.Persistencia.Models
 {
     public partial class HospiEnCasaContext : DbContext
@@ -44,7 +42,7 @@ namespace HospiEnCasa.App.Persistencia.Models
             modelBuilder.Entity<Asignado>(entity =>
             {
                 entity.HasKey(e => e.IdAsignado)
-                    .HasName("PK__asignado__123B78A96DC03B15");
+                    .HasName("PK__asignado__123B78A9D5C9D9BE");
 
                 entity.ToTable("asignado");
 
@@ -60,57 +58,53 @@ namespace HospiEnCasa.App.Persistencia.Models
                     .WithMany(p => p.Asignados)
                     .HasForeignKey(d => d.IdEnfermero)
                     .OnDelete(DeleteBehavior.ClientSetNull)
-                    .HasConstraintName("FK__asignado__Id_Enf__05D8E0BE");
+                    .HasConstraintName("FK__asignado__Id_Enf__3493CFA7");
 
                 entity.HasOne(d => d.IdMedicoNavigation)
                     .WithMany(p => p.Asignados)
                     .HasForeignKey(d => d.IdMedico)
                     .OnDelete(DeleteBehavior.ClientSetNull)
-                    .HasConstraintName("FK__asignado__Id_Med__06CD04F7");
+                    .HasConstraintName("FK__asignado__Id_Med__3587F3E0");
 
                 entity.HasOne(d => d.IdPacienteNavigation)
                     .WithMany(p => p.Asignados)
                     .HasForeignKey(d => d.IdPaciente)
                     .OnDelete(DeleteBehavior.ClientSetNull)
-                    .HasConstraintName("FK__asignado__Id_Pac__04E4BC85");
+                    .HasConstraintName("FK__asignado__Id_Pac__339FAB6E");
             });
 
             modelBuilder.Entity<Enfermero>(entity =>
             {
                 entity.HasKey(e => e.IdEnfer)
-                    .HasName("PK__enfermer__3E83A9A29445873E");
+                    .HasName("PK__enfermer__3E83A9A21E47336A");
 
                 entity.ToTable("enfermero");
 
                 entity.Property(e => e.IdEnfer).HasColumnName("Id_Enfer");
-
-                entity.Property(e => e.DocumentoPersona)
-                    .IsRequired()
-                    .HasMaxLength(25)
-                    .IsUnicode(false)
-                    .HasColumnName("Documento_Persona");
 
                 entity.Property(e => e.Especialidad)
                     .IsRequired()
                     .HasMaxLength(40)
                     .IsUnicode(false);
 
+                entity.Property(e => e.IdPersona).HasColumnName("Id_Persona");
+
                 entity.Property(e => e.Registro)
                     .IsRequired()
                     .HasMaxLength(25)
                     .IsUnicode(false);
 
-                entity.HasOne(d => d.DocumentoPersonaNavigation)
+                entity.HasOne(d => d.IdPersonaNavigation)
                     .WithMany(p => p.Enfermeros)
-                    .HasForeignKey(d => d.DocumentoPersona)
+                    .HasForeignKey(d => d.IdPersona)
                     .OnDelete(DeleteBehavior.ClientSetNull)
-                    .HasConstraintName("FK__enfermero__Docum__75A278F5");
+                    .HasConstraintName("FK__enfermero__Id_Pe__208CD6FA");
             });
 
             modelBuilder.Entity<Familiar>(entity =>
             {
                 entity.HasKey(e => e.IdFamiliar)
-                    .HasName("PK__familiar__1A39758151501D23");
+                    .HasName("PK__familiar__1A3975817FFC1F3D");
 
                 entity.ToTable("familiar");
 
@@ -121,36 +115,32 @@ namespace HospiEnCasa.App.Persistencia.Models
                     .HasMaxLength(30)
                     .IsUnicode(false);
 
-                entity.Property(e => e.DocumentoPersona)
-                    .IsRequired()
-                    .HasMaxLength(25)
-                    .IsUnicode(false)
-                    .HasColumnName("Documento_Persona");
-
                 entity.Property(e => e.IdPaciente).HasColumnName("Id_Paciente");
+
+                entity.Property(e => e.IdPersona).HasColumnName("Id_Persona");
 
                 entity.Property(e => e.Parentesco)
                     .IsRequired()
                     .HasMaxLength(15)
                     .IsUnicode(false);
 
-                entity.HasOne(d => d.DocumentoPersonaNavigation)
-                    .WithMany(p => p.Familiars)
-                    .HasForeignKey(d => d.DocumentoPersona)
-                    .OnDelete(DeleteBehavior.ClientSetNull)
-                    .HasConstraintName("FK__familiar__Docume__0A9D95DB");
-
                 entity.HasOne(d => d.IdPacienteNavigation)
                     .WithMany(p => p.Familiars)
                     .HasForeignKey(d => d.IdPaciente)
                     .OnDelete(DeleteBehavior.ClientSetNull)
-                    .HasConstraintName("FK__familiar__Id_Pac__09A971A2");
+                    .HasConstraintName("FK__familiar__Id_Pac__236943A5");
+
+                entity.HasOne(d => d.IdPersonaNavigation)
+                    .WithMany(p => p.Familiars)
+                    .HasForeignKey(d => d.IdPersona)
+                    .OnDelete(DeleteBehavior.ClientSetNull)
+                    .HasConstraintName("FK__familiar__Id_Per__245D67DE");
             });
 
             modelBuilder.Entity<Historium>(entity =>
             {
                 entity.HasKey(e => e.IdHistoria)
-                    .HasName("PK__historia__7DBFFDCD99A26EE1");
+                    .HasName("PK__historia__7DBFFDCDB5851F3C");
 
                 entity.ToTable("historia");
 
@@ -167,45 +157,41 @@ namespace HospiEnCasa.App.Persistencia.Models
                     .WithMany(p => p.Historia)
                     .HasForeignKey(d => d.IdPaciente)
                     .OnDelete(DeleteBehavior.ClientSetNull)
-                    .HasConstraintName("FK__historia__Id_Pac__787EE5A0");
+                    .HasConstraintName("FK__historia__Id_Pac__2739D489");
             });
 
             modelBuilder.Entity<Medico>(entity =>
             {
                 entity.HasKey(e => e.IdMedico)
-                    .HasName("PK__medico__7BA5D8100A446711");
+                    .HasName("PK__medico__7BA5D810F8F40E16");
 
                 entity.ToTable("medico");
 
                 entity.Property(e => e.IdMedico).HasColumnName("Id_Medico");
-
-                entity.Property(e => e.DocumentoPersona)
-                    .IsRequired()
-                    .HasMaxLength(25)
-                    .IsUnicode(false)
-                    .HasColumnName("Documento_Persona");
 
                 entity.Property(e => e.Especialidad)
                     .IsRequired()
                     .HasMaxLength(40)
                     .IsUnicode(false);
 
+                entity.Property(e => e.IdPersona).HasColumnName("Id_Persona");
+
                 entity.Property(e => e.Registro)
                     .IsRequired()
                     .HasMaxLength(25)
                     .IsUnicode(false);
 
-                entity.HasOne(d => d.DocumentoPersonaNavigation)
+                entity.HasOne(d => d.IdPersonaNavigation)
                     .WithMany(p => p.Medicos)
-                    .HasForeignKey(d => d.DocumentoPersona)
+                    .HasForeignKey(d => d.IdPersona)
                     .OnDelete(DeleteBehavior.ClientSetNull)
-                    .HasConstraintName("FK__medico__Document__6D0D32F4");
+                    .HasConstraintName("FK__medico__Id_Perso__1AD3FDA4");
             });
 
             modelBuilder.Entity<Paciente>(entity =>
             {
                 entity.HasKey(e => e.IdPac)
-                    .HasName("PK__paciente__51E3D4C06887E162");
+                    .HasName("PK__paciente__51E3D4C079873DFA");
 
                 entity.ToTable("paciente");
 
@@ -221,15 +207,11 @@ namespace HospiEnCasa.App.Persistencia.Models
                     .HasMaxLength(60)
                     .IsUnicode(false);
 
-                entity.Property(e => e.DocumentoPersona)
-                    .IsRequired()
-                    .HasMaxLength(25)
-                    .IsUnicode(false)
-                    .HasColumnName("Documento_Persona");
-
                 entity.Property(e => e.FechaNacimiento)
                     .HasColumnType("date")
                     .HasColumnName("Fecha_Nacimiento");
+
+                entity.Property(e => e.IdPersona).HasColumnName("Id_Persona");
 
                 entity.Property(e => e.Latitud)
                     .IsRequired()
@@ -241,54 +223,52 @@ namespace HospiEnCasa.App.Persistencia.Models
                     .HasMaxLength(25)
                     .IsUnicode(false);
 
-                entity.HasOne(d => d.DocumentoPersonaNavigation)
+                entity.HasOne(d => d.IdPersonaNavigation)
                     .WithMany(p => p.Pacientes)
-                    .HasForeignKey(d => d.DocumentoPersona)
+                    .HasForeignKey(d => d.IdPersona)
                     .OnDelete(DeleteBehavior.ClientSetNull)
-                    .HasConstraintName("FK__paciente__Docume__6FE99F9F");
+                    .HasConstraintName("FK__paciente__Id_Per__1DB06A4F");
             });
 
             modelBuilder.Entity<Persona>(entity =>
             {
-                entity.HasKey(e => e.Documento)
-                    .HasName("PK__persona__A25B3E601D7EC475");
+                entity.HasKey(e => e.IdPersona)
+                    .HasName("PK__persona__C95634AF4170690E");
 
                 entity.ToTable("persona");
 
-                entity.Property(e => e.Documento)
-                    .HasMaxLength(25)
-                    .IsUnicode(false)
-                    .HasColumnName("documento");
+                entity.Property(e => e.IdPersona).HasColumnName("Id_Persona");
 
-                entity.Property(e => e.Apellido)
+                entity.Property(e => e.Apellidos)
                     .IsRequired()
-                    .HasMaxLength(25)
-                    .IsUnicode(false)
-                    .HasColumnName("apellido");
+                    .HasMaxLength(30)
+                    .IsUnicode(false);
 
                 entity.Property(e => e.Genero)
                     .IsRequired()
-                    .HasMaxLength(25)
-                    .IsUnicode(false)
-                    .HasColumnName("genero");
+                    .HasMaxLength(15)
+                    .IsUnicode(false);
 
-                entity.Property(e => e.Nombre)
+                entity.Property(e => e.Id)
                     .IsRequired()
                     .HasMaxLength(25)
-                    .IsUnicode(false)
-                    .HasColumnName("nombre");
+                    .IsUnicode(false);
+
+                entity.Property(e => e.Nombres)
+                    .IsRequired()
+                    .HasMaxLength(30)
+                    .IsUnicode(false);
 
                 entity.Property(e => e.Telefono)
                     .IsRequired()
-                    .HasMaxLength(25)
-                    .IsUnicode(false)
-                    .HasColumnName("telefono");
+                    .HasMaxLength(20)
+                    .IsUnicode(false);
             });
 
             modelBuilder.Entity<SignosPaciente>(entity =>
             {
                 entity.HasKey(e => e.IdSignoPaciente)
-                    .HasName("PK__signos_p__690ACC197D945261");
+                    .HasName("PK__signos_p__690ACC1915241646");
 
                 entity.ToTable("signos_pacientes");
 
@@ -302,19 +282,19 @@ namespace HospiEnCasa.App.Persistencia.Models
                     .WithMany(p => p.SignosPacientes)
                     .HasForeignKey(d => d.IdPaciente)
                     .OnDelete(DeleteBehavior.ClientSetNull)
-                    .HasConstraintName("FK__signos_pa__Id_Pa__02084FDA");
+                    .HasConstraintName("FK__signos_pa__Id_Pa__30C33EC3");
 
                 entity.HasOne(d => d.IdSignoNavigation)
                     .WithMany(p => p.SignosPacientes)
                     .HasForeignKey(d => d.IdSigno)
                     .OnDelete(DeleteBehavior.ClientSetNull)
-                    .HasConstraintName("FK__signos_pa__Id_Si__01142BA1");
+                    .HasConstraintName("FK__signos_pa__Id_Si__2FCF1A8A");
             });
 
             modelBuilder.Entity<SignosVitale>(entity =>
             {
                 entity.HasKey(e => e.IdSigno)
-                    .HasName("PK__signos_v__EFF6D61FD2C8534C");
+                    .HasName("PK__signos_v__EFF6D61F52C33A48");
 
                 entity.ToTable("signos_vitales");
 
@@ -334,7 +314,7 @@ namespace HospiEnCasa.App.Persistencia.Models
             modelBuilder.Entity<Sugerencia>(entity =>
             {
                 entity.HasKey(e => e.IdSugerencia)
-                    .HasName("PK__sugerenc__6E863219EB8ECE3B");
+                    .HasName("PK__sugerenc__6E863219E137681E");
 
                 entity.ToTable("sugerencias");
 
@@ -353,13 +333,13 @@ namespace HospiEnCasa.App.Persistencia.Models
                     .WithMany(p => p.Sugerencia)
                     .HasForeignKey(d => d.IdHistoria)
                     .OnDelete(DeleteBehavior.ClientSetNull)
-                    .HasConstraintName("FK__sugerenci__Id_Hi__7B5B524B");
+                    .HasConstraintName("FK__sugerenci__Id_Hi__2A164134");
 
                 entity.HasOne(d => d.IdMedicoNavigation)
                     .WithMany(p => p.Sugerencia)
                     .HasForeignKey(d => d.IdMedico)
                     .OnDelete(DeleteBehavior.ClientSetNull)
-                    .HasConstraintName("FK__sugerenci__Id_Me__7C4F7684");
+                    .HasConstraintName("FK__sugerenci__Id_Me__2B0A656D");
             });
 
             OnModelCreatingPartial(modelBuilder);

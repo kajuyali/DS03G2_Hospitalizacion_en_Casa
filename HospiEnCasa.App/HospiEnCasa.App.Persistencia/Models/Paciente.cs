@@ -21,9 +21,9 @@ namespace HospiEnCasa.App.Persistencia.Models
         public DateTime FechaNacimiento { get; set; }
         public string Latitud { get; set; }
         public string Longitud { get; set; }
-        public string DocumentoPersona { get; set; }
+        public int IdPersona { get; set; }
 
-        public virtual Persona DocumentoPersonaNavigation { get; set; }
+        public virtual Persona IdPersonaNavigation { get; set; }
         public virtual ICollection<Asignado> Asignados { get; set; }
         public virtual ICollection<Familiar> Familiars { get; set; }
         public virtual ICollection<Historium> Historia { get; set; }
