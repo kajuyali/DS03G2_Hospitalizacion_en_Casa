@@ -77,3 +77,8 @@ C:\Users\pc\Desktop\Hospitalizacion\HospiEnCasa.App\HospiEnCasa.App.FrontEnd\obj
 C:\Users\pc\Desktop\Hospitalizacion\HospiEnCasa.App\HospiEnCasa.App.FrontEnd\obj\Debug\netcoreapp3.1\HospiEnCasa.App.FrontEnd.dll
 C:\Users\pc\Desktop\Hospitalizacion\HospiEnCasa.App\HospiEnCasa.App.FrontEnd\obj\Debug\netcoreapp3.1\HospiEnCasa.App.FrontEnd.pdb
 C:\Users\pc\Desktop\Hospitalizacion\HospiEnCasa.App\HospiEnCasa.App.FrontEnd\obj\Debug\netcoreapp3.1\HospiEnCasa.App.FrontEnd.genruntimeconfig.cache
+C:\Users\pc\Desktop\Hospitalizacion\HospiEnCasa.App\HospiEnCasa.App.FrontEnd\obj\Debug\netcoreapp3.1\Razor\Pages\Listado\Listado.cshtml.g.cs
+C:\Users\pc\Desktop\Hospitalizacion\HospiEnCasa.App\HospiEnCasa.App.FrontEnd\obj\Debug\netcoreapp3.1\Razor\Pages\Medicos\NuevoMedico.cshtml.g.cs
+C:\Users\pc\Desktop\Hospitalizacion\HospiEnCasa.App\HospiEnCasa.App.FrontEnd\obj\Debug\netcoreapp3.1\Razor\Pages\Pacientes\ConsultarPaciente.cshtml.g.cs
+C:\Users\pc\Desktop\Hospitalizacion\HospiEnCasa.App\HospiEnCasa.App.FrontEnd\obj\Debug\netcoreapp3.1\Razor\Pages\Pacientes\NuevoFamiliar.cshtml.g.cs
+C:\Users\pc\Desktop\Hospitalizacion\HospiEnCasa.App\HospiEnCasa.App.FrontEnd\obj\Debug\netcoreapp3.1\Razor\Pages\Pacientes\NuevoPaciente.cshtml.g.cs
