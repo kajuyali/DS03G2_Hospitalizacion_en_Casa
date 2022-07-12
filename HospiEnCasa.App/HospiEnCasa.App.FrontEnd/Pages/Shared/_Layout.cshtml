@@ -3,47 +3,140 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>@ViewData["Title"] - HospiEnCasa.App.FrontEnd</title>
+    <title>@ViewData["Title"] - HospiEnCasa</title>
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="~/css/site.css" />
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/bs4/dt-1.12.1/datatables.min.css"/>
 </head>
 <body>
-    <header>
-        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
-            <div class="container">
-                <a class="navbar-brand" asp-area="" asp-page="/Index">HospiEnCasa.App.FrontEnd</a>
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
-                        aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="navbar-collapse collapse d-sm-inline-flex flex-sm-row-reverse">
-                    <ul class="navbar-nav flex-grow-1">
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-page="/Index">Home</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-page="/Privacy">Privacy</a>
-                        </li>
-                    </ul>
-                </div>
+      <!-- Inicio del menu vertical -->
+      <div class="vertical-nav bg-white" id="sidebar">
+        <div class="py-4 px-3 mb-4 bg-light">
+          <div class="media d-flex align-items-center">
+            <img loading="lazy" src="~/assets/teamwork.png" alt="icono" width="80" height="80" class="mr-3 rounded-circle img-thumbnail shadow-sm">
+            <div class="media-body">
+              <h4 class="m-0">Algun Nombre</h4>
+              <p class="font-weight-normal text-muted mb-0">Auxiliar</p>
             </div>
-        </nav>
-    </header>
-    <div class="container">
+          </div>
+        </div>
+      
+        <p class="text-gray font-weight-bold text-uppercase px-3 small pb-4 mb-0">Menu Principal</p>
+      
+        <ul class="nav flex-column bg-white mb-0">
+          <li class="nav-item">
+            <a asp-page="/index" class="nav-link text-dark bg-light">
+                      <i class="fa fa-th-large mr-3 text-primary fa-fw"></i>
+                      Inicio
+            </a>
+          </li>
+          <li class="nav-item">
+            <div class="nav-link text-dark" data-toggle="collapse" data-target="#pacienteContent" aria-controls="pacienteContent" aria-expanded="false" aria-label="Toggle navigation">
+                      <i class="fa fa-users mr-3 text-primary"></i>
+                      <span>Pacientes</span>
+            </div>
+            <div class="collapse" id="pacienteContent">
+              <div class="bg-light p-2">
+                <ul class="nav">
+                  <a asp-page="/Pacientes/NuevoPaciente" class="nav-item">
+                    <li class="nav-link text-dark bg-light hover">
+                      <i class="fa fa-plus mr-3 text-primary" aria-hidden="true"></i>
+                      Añadir Paciente
+                    </li>
+                  </a>
+                  <li class="nav-item">
+                    <a asp-page="/Pacientes/NuevoFamiliar" class="nav-link text-dark bg-light hover">
+                      <i class="fa fa-plus mr-3 text-primary" aria-hidden="true"></i>
+                      Añadir Familiar
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <a asp-page="/Pacientes/ConsultarPaciente" class="nav-link text-dark bg-light">
+                      <i class="fa fa-search mr-3 text-primary"></i>
+                      Consultar Paciente
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </li>
+          <li class="nav-item">
+            <div class="nav-link text-dark" data-toggle="collapse" data-target="#medicosContent" aria-controls="medicosContent" aria-expanded="false" aria-label="Toggle navigation">
+              <i class="fa fa-user-md mr-3 text-primary"></i>
+                      <span>Medicos</span>
+            </div>
+            
+            <div class="collapse" id="medicosContent">
+              <div class="bg-light p-2">
+                <ul class="nav">
+                  <li class="nav-item">
+                    <a asp-page="/Medicos/NuevoMedico" class="nav-link text-dark bg-light hover">
+                      <i class="fa fa-plus mr-3 text-primary" aria-hidden="true"></i>
+                      Añadir Medico
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <a href="#" class="nav-link text-dark bg-light">
+                      <i class="fa fa-search mr-3 text-primary"></i>
+                      Consultar Medicos
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </li>
+          <li class="nav-item">
+            <div class="nav-link text-dark" data-toggle="collapse" data-target="#enfermerosContent" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
+              <i class="fa fa-user-md mr-3 text-primary"></i>
+                      <span>Enfermeros</span>
+            </div>
+            
+            <div class="collapse" id="enfermerosContent">
+              <div class="bg-light p-2">
+                <ul class="nav">
+                  <li class="nav-item">
+                    <a href="#" class="nav-link text-dark bg-light hover">
+                      <i class="fa fa-plus mr-3 text-primary" aria-hidden="true"></i>
+                      Añadir Enfermero
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <a href="#" class="nav-link text-dark bg-light">
+                      <i class="fa fa-search mr-3 text-primary"></i>
+                      Consultar Enfermero
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </li>
+          <li class="nav-item">
+            <a asp-page="/Listado/Listado" class="nav-link text-dark">
+                      <i class="fa fa-search mr-3 text-primary"></i>
+                      Listado
+            </a>
+          </li>
+        </ul>
+        <small class="bottom">Hecho con &#10084; por el equipo 2</small>
+      </div>
+
+      <!-- Fin del menu vertical -->
+    <div class="page-content">
         <main role="main" class="pb-3">
             @RenderBody()
         </main>
     </div>
 
-    <footer class="border-top footer text-muted">
-        <div class="container">
-            &copy; 2022 - HospiEnCasa.App.FrontEnd - <a asp-area="" asp-page="/Privacy">Privacy</a>
-        </div>
-    </footer>
+
 
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
+    </script>
+    <script type="text/javascript" src="https://cdn.datatables.net/v/bs4/dt-1.12.1/datatables.min.js">
+    </script>
 
     @RenderSection("Scripts", required: false)
 </body>
