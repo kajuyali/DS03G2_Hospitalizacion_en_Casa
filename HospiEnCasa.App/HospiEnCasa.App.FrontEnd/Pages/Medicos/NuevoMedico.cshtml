@@ -1,0 +1,61 @@
+@page
+@model HospiEnCasa.App.FrontEnd.Pages.Medicos.NuevoMedico
+@{
+    ViewData["Title"] = "Nuevo Medico";
+}
+
+        <div class="card p-2 m-5">
+            <div class="card-body">
+                <div class="card-title text-center">
+                    <p class="form-title font-weight-bold">Formulario Medico</p>
+                </div>
+                <form>
+                    <div class="form-group">
+                        <div class="row">
+                            <div class="col">
+                                <input type="text" class="form-control" id="nombre" placeholder="Nombres">
+                            </div>
+                            <div class="col">
+                                <input type="text" class="form-control" id="apellidos" placeholder="Apellidos">
+                            </div>
+                        </div>
+                    </div>    
+                        <div class="form-group mt-4">
+                            <div class="row">
+                                <div class="col">
+                                    <input type="text" class="form-control" id="cedula" placeholder="Documento">
+                                </div>
+                                <div class="col">
+                                    <input type="text" class="form-control" id="telefono" placeholder="Telefono">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group mt-4">
+                            <input type="text" class="form-control" id="direccion" placeholder="Dirección">
+                        </div>
+                        
+                        <div class="input-group mb-3">
+                            <div class="input-group-prepend">
+                              <label class="input-group-text" for="inputGroupSelect01">Genero</label>
+                            </div>
+                            <select class="custom-select" id="inputGroupSelect01">
+                              <option selected>-- Selecciona una opción --</option>
+                              <option value="masculino">Masculino</option>
+                              <option value="femenino">Femenino</option>
+                              <option value="otro">Otro</option>
+                            </select>
+                        </div>
+                        <div class="form-group mt-4">
+                            <div class="row">
+                                <div class="col">
+                                    <input type="text" class="form-control" id="especialidad" placeholder="Especialidad">
+                                </div>
+                                <div class="col">
+                                    <input type="text" class="form-control" id="registro" placeholder="Registro Medico">
+                                </div>
+                            </div>
+                        </div>
+                        <button type="button" class="btn btn-primary btn-lg btn-block">Añadir Medico</button>
+                </form>
+            </div>
+        </div>
