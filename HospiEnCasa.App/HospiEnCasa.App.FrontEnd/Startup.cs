@@ -8,6 +8,9 @@ using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using HospiEnCasa.App.Persistencia.Models;
+using HospiEnCasa.App.Persistencia.AppRepositorios;
+using Microsoft.EntityFrameworkCore;
 
 namespace HospiEnCasa.App.FrontEnd
 {
@@ -24,6 +27,14 @@ namespace HospiEnCasa.App.FrontEnd
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddRazorPages();
+            //Agregar servicio de acciones a la base de datos
+            services.AddTransient<IRepositorioPersona, RepositorioPersona>();
+            services.AddTransient<IRepositorioMedico, RepositorioMedico>();
+
+
+            //Servicio de conexión a la base de datos
+            services.AddDbContext<HospiEnCasaContext>(options => options.UseSqlServer(Configuration.GetConnectionString("Database")));
+            services.AddMemoryCache();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
