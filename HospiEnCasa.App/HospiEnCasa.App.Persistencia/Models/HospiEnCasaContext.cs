@@ -33,7 +33,7 @@ namespace HospiEnCasa.App.Persistencia.Models
         {
             if (!optionsBuilder.IsConfigured)
             {
-                optionsBuilder.UseSqlServer(Configuration.GetConnectionString("Database"));
+                optionsBuilder.UseSqlServer((Configuration.GetConnectionString("Database")));
             }
         }
 

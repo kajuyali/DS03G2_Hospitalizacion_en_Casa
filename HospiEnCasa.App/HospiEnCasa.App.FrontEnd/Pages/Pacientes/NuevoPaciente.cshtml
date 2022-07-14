@@ -12,21 +12,22 @@
             <form method="post">
               <div class="form-group">
                 <div class="row">
+                  <input type="hidden" asp-for="Persona.IdPersona">
                   <div class="col">
-                    <input type="text" class="form-control" id="nombres" placeholder="Nombres">
+                    <input type="text" class="form-control" asp-for="Persona.Nombres" placeholder="Nombres">
                     <div class="alerta" id="alerta"></div>
                   </div>
                   <div class="col">
-                    <input type="text" class="form-control" id="apellidos" placeholder="Apellidos">
+                    <input type="text" class="form-control" asp-for="Persona.Apellidos" placeholder="Apellidos">
                   </div>
                 </div>
                 <div class="form-group mt-4">
                   <div class="row">
                     <div class="col">
-                      <input type="text" class="form-control" id="nombres" placeholder="Documento">
+                      <input type="text" class="form-control" asp-for="Persona.Id" placeholder="Documento">
                     </div>
                     <div class="col">
-                      <input type="text" class="form-control" id="apellidos" placeholder="Teléfono">
+                      <input type="text" class="form-control" asp-for="Persona.Telefono" placeholder="Teléfono">
                     </div>
                   </div>
                 </div>
@@ -35,7 +36,7 @@
                     <div class="input-group-prepend">
                       <label class="input-group-text" for="inputGroupSelect01">Genero</label>
                     </div>
-                    <select class="custom-select" id="genero">
+                    <select class="custom-select" asp-for="Persona.Genero">
                       <option selected>-- Selecciona una opción --</option>
                       <option value="masculino">Masculino</option>
                       <option value="femenino">Femenino</option>
@@ -58,7 +59,7 @@
                 </div>
               </div>
               <div class="mt-4">
-                <button type="button" class="btn btn-primary btn-lg btn-block">Añadir Paciente</button>
+                <button type="submit" class="btn btn-primary btn-lg btn-block">Añadir Paciente</button>
               </div>
             </form>
           </div>

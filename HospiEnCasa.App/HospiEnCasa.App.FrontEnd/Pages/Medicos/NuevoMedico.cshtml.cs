@@ -5,20 +5,39 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.Extensions.Logging;
+using HospiEnCasa.App.Persistencia.Models;
+using HospiEnCasa.App.Persistencia.AppRepositorios;
 
 namespace HospiEnCasa.App.FrontEnd.Pages.Medicos
 {
     public class NuevoMedico : PageModel
     {
         private readonly ILogger<NuevoMedico> _logger;
+        private readonly IRepositorioPersona repositorioPersona;
+        private readonly IRepositorioMedico repositorioMedico;
+        [BindProperty]
+        public Persona Persona { get; set; }
+        [BindProperty]
+        public Medico Medico { get; set; }
 
-        public NuevoMedico(ILogger<NuevoMedico> logger)
+        public NuevoMedico(ILogger<NuevoMedico> logger, IRepositorioPersona repositorioPersona, IRepositorioMedico repositorioMedico)
         {
             _logger = logger;
+            this.repositorioPersona = repositorioPersona;
+            this.repositorioMedico = repositorioMedico;
+        }
+        public IActionResult OnGet()
+        {
+            return Page();
         }
 
-        public void OnGet()
+        // Insertar registro en la base de datos
+        public void OnPost()
         {
+            //insertar persona y medico en la base de datos
+            repositorioPersona.Crear(Persona);
+            Medico.IdPersona = Persona.IdPersona;
+            repositorioMedico.Crear(Medico);
         }
     }
 }
