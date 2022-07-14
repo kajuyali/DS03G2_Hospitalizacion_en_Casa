@@ -27,13 +27,12 @@ namespace HospiEnCasa.App.FrontEnd
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddRazorPages();
+            //Servicio de conexión a la base de datos
+            services.AddDbContext<HospiEnCasaContext>(options => options.UseSqlServer((Configuration.GetConnectionString("Database"))));
             //Agregar servicio de acciones a la base de datos
             services.AddTransient<IRepositorioPersona, RepositorioPersona>();
             services.AddTransient<IRepositorioMedico, RepositorioMedico>();
-
-
-            //Servicio de conexión a la base de datos
-            services.AddDbContext<HospiEnCasaContext>(options => options.UseSqlServer(Configuration.GetConnectionString("Database")));
+            services.AddTransient<IRepositorioPaciente, RepositorioPaciente>();
             services.AddMemoryCache();
         }
 

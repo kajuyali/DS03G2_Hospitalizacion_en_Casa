@@ -32,18 +32,12 @@ namespace HospiEnCasa.App.FrontEnd.Pages.Medicos
         }
 
         // Insertar registro en la base de datos
-        public IActionResult OnPost()
+        public void OnPost()
         {
-            if (!ModelState.IsValid)
-            {
-                return Page();
-            }
-            // Insertar persona
+            //insertar persona y medico en la base de datos
             repositorioPersona.Crear(Persona);
             Medico.IdPersona = Persona.IdPersona;
             repositorioMedico.Crear(Medico);
-            return Page();
-            
         }
     }
 }
