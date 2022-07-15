@@ -1,9 +1,13 @@
 {
   "version": 2,
-  "dgSpecHash": "D4G2IGQXVFKakNXhEYwy6qeIMp7R1td5H/rUZmWeoD40nTAEaIP7DMADGLpk9n5RgadKWn1t8Y8Qq08YRsqyjg==",
+  "dgSpecHash": "BOT9WF30DiDGE2MOXRPSPTEqn7HNZ1gpkMJTxruH2sACfttMHpayUOwUNpNTEY8fEXozMWV/TlkVheW7LBInPA==",
   "success": true,
   "projectFilePath": "C:\\Users\\pc\\Desktop\\Hospitalizacion\\HospiEnCasa.App\\HospiEnCasa.App.FrontEnd\\HospiEnCasa.App.FrontEnd.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\pc\\.nuget\\packages\\bootstrap\\4.0.0\\bootstrap.4.0.0.nupkg.sha512",
+    "C:\\Users\\pc\\.nuget\\packages\\datatables.net\\1.11.3\\datatables.net.1.11.3.nupkg.sha512",
+    "C:\\Users\\pc\\.nuget\\packages\\datatables.net-bs4\\1.12.1\\datatables.net-bs4.1.12.1.nupkg.sha512",
+    "C:\\Users\\pc\\.nuget\\packages\\jquery\\3.0.0\\jquery.3.0.0.nupkg.sha512",
     "C:\\Users\\pc\\.nuget\\packages\\microsoft.csharp\\4.5.0\\microsoft.csharp.4.5.0.nupkg.sha512",
     "C:\\Users\\pc\\.nuget\\packages\\microsoft.data.sqlclient\\2.0.1\\microsoft.data.sqlclient.2.0.1.nupkg.sha512",
     "C:\\Users\\pc\\.nuget\\packages\\microsoft.data.sqlclient.sni.runtime\\2.0.1\\microsoft.data.sqlclient.sni.runtime.2.0.1.nupkg.sha512",
@@ -32,6 +36,7 @@
     "C:\\Users\\pc\\.nuget\\packages\\microsoft.win32.registry\\4.7.0\\microsoft.win32.registry.4.7.0.nupkg.sha512",
     "C:\\Users\\pc\\.nuget\\packages\\microsoft.win32.systemevents\\4.7.0\\microsoft.win32.systemevents.4.7.0.nupkg.sha512",
     "C:\\Users\\pc\\.nuget\\packages\\newtonsoft.json\\10.0.1\\newtonsoft.json.10.0.1.nupkg.sha512",
+    "C:\\Users\\pc\\.nuget\\packages\\popper.js\\1.12.9\\popper.js.1.12.9.nupkg.sha512",
     "C:\\Users\\pc\\.nuget\\packages\\runtime.native.system\\4.3.0\\runtime.native.system.4.3.0.nupkg.sha512",
     "C:\\Users\\pc\\.nuget\\packages\\system.collections\\4.3.0\\system.collections.4.3.0.nupkg.sha512",
     "C:\\Users\\pc\\.nuget\\packages\\system.collections.concurrent\\4.3.0\\system.collections.concurrent.4.3.0.nupkg.sha512",

@@ -25,6 +25,7 @@
       "HospiEnCasa.App.FrontEnd/1.0.0": {
         "dependencies": {
           "HospiEnCasa.App.Persistencia": "1.0.0",
+          "datatables.net-bs4": "1.12.1",
           "Microsoft.AspNetCore.Antiforgery": "3.1.0.0",
           "Microsoft.AspNetCore.Authentication.Abstractions": "3.1.0.0",
           "Microsoft.AspNetCore.Authentication.Cookies": "3.1.0.0",
@@ -303,6 +304,24 @@
           "HospiEnCasa.App.FrontEnd.dll": {}
         }
       },
+      "bootstrap/4.0.0": {
+        "dependencies": {
+          "jQuery": "3.0.0",
+          "popper.js": "1.12.9"
+        }
+      },
+      "datatables.net/1.11.3": {
+        "dependencies": {
+          "jQuery": "3.0.0"
+        }
+      },
+      "datatables.net-bs4/1.12.1": {
+        "dependencies": {
+          "bootstrap": "4.0.0",
+          "datatables.net": "1.11.3"
+        }
+      },
+      "jQuery/3.0.0": {},
       "Microsoft.CSharp/4.5.0": {},
       "Microsoft.Data.SqlClient/2.0.1": {
         "dependencies": {
@@ -718,6 +737,7 @@
           "lib/netstandard1.3/Newtonsoft.Json.dll": {}
         }
       },
+      "popper.js/1.12.9": {},
       "runtime.native.System/4.3.0": {
         "dependencies": {
           "Microsoft.NETCore.Platforms": "3.1.0",
@@ -3001,6 +3021,34 @@
       "serviceable": false,
       "sha512": ""
     },
+    "bootstrap/4.0.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-aW3kJMmptC2GD4+hIa3x3fSrPF4VkrWQ2PRBEJg+o7lMRMi7u4UW9igY/GP02/wrIpH/CusL+mQIM42YhvA3XQ==",
+      "path": "bootstrap/4.0.0",
+      "hashPath": "bootstrap.4.0.0.nupkg.sha512"
+    },
+    "datatables.net/1.11.3": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-n6wjQC7FbSHQTB/1vNJzy6YhxwVScDQjV2PeJjT/RizOtO4XJkPDJYi6P9CavlBgEEIdL80Jwdd3LjzBzpXRpw==",
+      "path": "datatables.net/1.11.3",
+      "hashPath": "datatables.net.1.11.3.nupkg.sha512"
+    },
+    "datatables.net-bs4/1.12.1": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-zYSuq4XGXXsO4clJ8H8cOd5nu7A1wRVKlWdzQgOqhSy9RLCdO0WTYTjkpZPjoUu1xF0c1G313WSamVBjQ86V+A==",
+      "path": "datatables.net-bs4/1.12.1",
+      "hashPath": "datatables.net-bs4.1.12.1.nupkg.sha512"
+    },
+    "jQuery/3.0.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-xFfntV19HzCtKdJWOp/XT9PUY3SslokTDDLFJZdBug36j1XVhw1+vPQ/n7Gd5y+jdpesn5B1m1yn1qIUq57jlA==",
+      "path": "jquery/3.0.0",
+      "hashPath": "jquery.3.0.0.nupkg.sha512"
+    },
     "Microsoft.CSharp/4.5.0": {
       "type": "package",
       "serviceable": true,
@@ -3196,6 +3244,13 @@
       "sha512": "sha512-ebWzW9j2nwxQeBo59As2TYn7nYr9BHicqqCwHOD1Vdo+50HBtLPuqdiCYJcLdTRknpYis/DSEOQz5KmZxwrIAg==",
       "path": "newtonsoft.json/10.0.1",
       "hashPath": "newtonsoft.json.10.0.1.nupkg.sha512"
+    },
+    "popper.js/1.12.9": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-WfoI8YXFx31zr8w6AvYMmqKihR3a/wLc5wBhu41ApgBukTM8C2UHNSRFrO6485SDQ/HKoSn9yiEMgfBx1LVNNw==",
+      "path": "popper.js/1.12.9",
+      "hashPath": "popper.js.1.12.9.nupkg.sha512"
     },
     "runtime.native.System/4.3.0": {
       "type": "package",
