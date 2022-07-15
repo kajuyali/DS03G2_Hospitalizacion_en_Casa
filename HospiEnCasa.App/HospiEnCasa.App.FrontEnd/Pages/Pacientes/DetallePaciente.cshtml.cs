@@ -6,13 +6,13 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.Extensions.Logging;
 
-namespace HospiEnCasa.App.FrontEnd.Pages.Listado
+namespace HospiEnCasa.App.FrontEnd.Pages.Pacientes
 {
-    public class Listado : PageModel
+    public class DetallePaciente : PageModel
     {
-        private readonly ILogger<Listado> _logger;
+        private readonly ILogger<DetallePaciente> _logger;
 
-        public Listado(ILogger<Listado> logger)
+        public DetallePaciente(ILogger<DetallePaciente> logger)
         {
             _logger = logger;
         }

@@ -4,6 +4,10 @@
     <ProjectReference Include="..\HospiEnCasa.App.Persistencia\HospiEnCasa.App.Persistencia.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <PackageReference Include="datatables.net-bs4" Version="1.12.1" />
+  </ItemGroup>
+
   <PropertyGroup>
     <TargetFramework>netcoreapp3.1</TargetFramework>
   </PropertyGroup>

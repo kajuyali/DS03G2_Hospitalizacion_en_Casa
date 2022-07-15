@@ -17,6 +17,7 @@ namespace HospiEnCasa.App.FrontEnd.Pages.Pacientes
         private readonly IRepositorioPersona repositorioPersona;
         [BindProperty]
         public Persona Persona { get; set; }
+        [BindProperty]
         public Paciente Paciente { get; set; }
 
         public NuevoPaciente(ILogger<NuevoPaciente> logger, IRepositorioPaciente repositorioPaciente, IRepositorioPersona repositorioPersona)
@@ -30,14 +31,12 @@ namespace HospiEnCasa.App.FrontEnd.Pages.Pacientes
         {
         }
 
-        public IActionResult OnPost(){
-            if(!ModelState.IsValid){
-                return Page();
-            }
+        public void OnPost(){
+
             repositorioPersona.Crear(Persona);
-            //Paciente.IdPersona = Persona.IdPersona;
-            //repositorioPaciente.Crear(Paciente);
-            return RedirectToPage("Index");
+            Paciente.IdPersona = Persona.IdPersona;
+            repositorioPaciente.Crear(Paciente);
+
         }
     }
 }

@@ -46,15 +46,9 @@
                     </li>
                   </a>
                   <li class="nav-item">
-                    <a asp-page="/Pacientes/NuevoFamiliar" class="nav-link text-dark bg-light hover">
-                      <i class="fa fa-plus mr-3 text-primary" aria-hidden="true"></i>
-                      Añadir Familiar
-                    </a>
-                  </li>
-                  <li class="nav-item">
-                    <a asp-page="/Pacientes/ConsultarPaciente" class="nav-link text-dark bg-light">
+                    <a asp-page="/Pacientes/ListaPacientes" class="nav-link text-dark bg-light">
                       <i class="fa fa-search mr-3 text-primary"></i>
-                      Consultar Paciente
+                      Lista de Pacientes
                     </a>
                   </li>
                 </ul>
@@ -77,9 +71,9 @@
                     </a>
                   </li>
                   <li class="nav-item">
-                    <a href="#" class="nav-link text-dark bg-light">
+                    <a asp-page="/Medicos/ListaMedicos" class="nav-link text-dark bg-light">
                       <i class="fa fa-search mr-3 text-primary"></i>
-                      Consultar Medicos
+                      Lista de Medicos
                     </a>
                   </li>
                 </ul>
@@ -110,12 +104,6 @@
                 </ul>
               </div>
             </div>
-          </li>
-          <li class="nav-item">
-            <a asp-page="/Listado/Listado" class="nav-link text-dark">
-                      <i class="fa fa-search mr-3 text-primary"></i>
-                      Listado
-            </a>
           </li>
         </ul>
         <small class="bottom">Hecho con &#10084; por el equipo 2</small>
