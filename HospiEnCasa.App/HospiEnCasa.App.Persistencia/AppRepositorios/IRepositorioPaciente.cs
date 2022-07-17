@@ -9,5 +9,6 @@ namespace HospiEnCasa.App.Persistencia.AppRepositorios
     public interface IRepositorioPaciente
     {
         Paciente Crear(Paciente paciente);
+        IEnumerable<PacientesPer> ObtenerPacientes();
     }
 }

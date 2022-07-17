@@ -22,19 +22,22 @@
             </tr>
           </thead>
           <tbody>
-            <tr>
-              <td>13216546</td>
-              <td>Juana Carolina</td>
-              <td>Mendoza Perez</td>
-              <td>312546462</td>
-              <td>Bucaramanga</td>
-              <td>Femenino</td>
-              <td>12/01/1998</td>
-              <td class="d-fle align-items-center">
-                <a href="#" class="ml-2"><i class="fa fa-cog" aria-hidden="true"></i></a>
-                <a href="#" class="ml-4"><i class="fa fa-trash-o" aria-hidden="true"></i></a>
-              </td>
+            @foreach (var paciente in Model.Pacientes)
+            {
+              <tr>
+                <td>@paciente.Id</td>
+                <td>@paciente.Nombres</td>
+                <td>@paciente.Apellidos</td>
+                <td>@paciente.Telefono</td>
+                <td>@paciente.Ciudad</td>
+                <td style="text-transform: capitalize;">@paciente.Genero</td>
+                <td>@paciente.FechaNacimiento</td>
+                <td class="d-fle align-items-center">
+                  <a href="#" class="ml-2"><i class="fa fa-cog" aria-hidden="true"></i></a>
+                  <a href="#" class="ml-4"><i class="fa fa-trash-o" aria-hidden="true"></i></a>
+                </td>
             </tr>
+            }
           </tbody>
         </table>
       </div>
