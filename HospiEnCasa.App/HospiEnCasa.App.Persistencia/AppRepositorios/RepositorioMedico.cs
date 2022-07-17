@@ -20,6 +20,8 @@ namespace HospiEnCasa.App.Persistencia.AppRepositorios
                             where p.IdPersona == p1.IdPersona
                             select new MedicosPer()
                             {
+                                IdMedico = p.IdMedico,
+                                IdPersona = p1.IdPersona,
                                 Id = p1.Id,
                                 Nombres = p1.Nombres,
                                 Apellidos = p1.Apellidos,
@@ -30,6 +32,27 @@ namespace HospiEnCasa.App.Persistencia.AppRepositorios
                             };
             IEnumerable<MedicosPer> medicosPer = medicos;
             return medicosPer;
+        }
+        public MedicosPer ObtenerMedico(int id)
+        {
+            var medico = from p in _context.Medicos
+                         from p1 in _context.Personas
+                         where p.IdMedico == id
+                         where p.IdPersona == p1.IdPersona
+                         select new MedicosPer()
+                         {
+                            IdMedico = p.IdMedico,
+                            IdPersona = p1.IdPersona,
+                            Id = p1.Id,
+                            Nombres = p1.Nombres,
+                            Apellidos = p1.Apellidos,
+                            Genero = p1.Genero,
+                            Telefono = p1.Telefono,
+                            Especialidad = p.Especialidad,
+                            Registro = p.Registro
+                         };
+            MedicosPer medicoPer = medico.FirstOrDefault();
+            return medicoPer;
         }
         public Medico Crear(Medico medico)
         {

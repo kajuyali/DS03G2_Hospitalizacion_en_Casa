@@ -7,6 +7,8 @@ namespace HospiEnCasa.App.Persistencia.Models
 {
     public class MedicosPer
     {
+        public int IdMedico { get; set; }
+        public int IdPersona { get; set; }
         public string Id { get; set; }
         public string Nombres{ get; set; }
         public string Apellidos { get; set; }

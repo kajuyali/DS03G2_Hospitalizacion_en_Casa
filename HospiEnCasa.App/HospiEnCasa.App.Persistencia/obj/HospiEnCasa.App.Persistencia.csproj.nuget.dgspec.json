@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\stefy\\Documents\\GitHub\\DS03G2_Hospitalizacion_en_Casa\\HospiEnCasa.App\\HospiEnCasa.App.Persistencia\\HospiEnCasa.App.Persistencia.csproj": {}
+    "C:\\Users\\pc\\Desktop\\Hospitalizacion\\HospiEnCasa.app\\HospiEnCasa.App.Persistencia\\HospiEnCasa.App.Persistencia.csproj": {}
   },
   "projects": {
-    "C:\\Users\\stefy\\Documents\\GitHub\\DS03G2_Hospitalizacion_en_Casa\\HospiEnCasa.App\\HospiEnCasa.App.Persistencia\\HospiEnCasa.App.Persistencia.csproj": {
+    "C:\\Users\\pc\\Desktop\\Hospitalizacion\\HospiEnCasa.app\\HospiEnCasa.App.Persistencia\\HospiEnCasa.App.Persistencia.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\stefy\\Documents\\GitHub\\DS03G2_Hospitalizacion_en_Casa\\HospiEnCasa.App\\HospiEnCasa.App.Persistencia\\HospiEnCasa.App.Persistencia.csproj",
+        "projectUniqueName": "C:\\Users\\pc\\Desktop\\Hospitalizacion\\HospiEnCasa.app\\HospiEnCasa.App.Persistencia\\HospiEnCasa.App.Persistencia.csproj",
         "projectName": "HospiEnCasa.App.Persistencia",
-        "projectPath": "C:\\Users\\stefy\\Documents\\GitHub\\DS03G2_Hospitalizacion_en_Casa\\HospiEnCasa.App\\HospiEnCasa.App.Persistencia\\HospiEnCasa.App.Persistencia.csproj",
-        "packagesPath": "C:\\Users\\stefy\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\stefy\\Documents\\GitHub\\DS03G2_Hospitalizacion_en_Casa\\HospiEnCasa.App\\HospiEnCasa.App.Persistencia\\obj\\",
+        "projectPath": "C:\\Users\\pc\\Desktop\\Hospitalizacion\\HospiEnCasa.app\\HospiEnCasa.App.Persistencia\\HospiEnCasa.App.Persistencia.csproj",
+        "packagesPath": "C:\\Users\\pc\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\pc\\Desktop\\Hospitalizacion\\HospiEnCasa.app\\HospiEnCasa.App.Persistencia\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\stefy\\AppData\\Roaming\\NuGet\\NuGet.Config"
+          "C:\\Users\\pc\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "netstandard2.1"
