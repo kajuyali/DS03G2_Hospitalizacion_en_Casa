@@ -28,6 +28,8 @@ namespace HospiEnCasa.App.Persistencia.AppRepositorios
                             where p.IdPersona == p1.IdPersona
                             select new PacientesPer()
                             {
+                                IdPaciente = p.IdPac,
+                                IdPersona = p1.IdPersona,
                                 Id = p1.Id,
                                 Nombres = p1.Nombres,
                                 Apellidos = p1.Apellidos,
@@ -41,6 +43,30 @@ namespace HospiEnCasa.App.Persistencia.AppRepositorios
                             };
             IEnumerable<PacientesPer> pacientesPer = pacientes;
             return pacientesPer;
+        }
+        public PacientesPer ObtenerPaciente(int IdPaciente)
+        {
+            var pacientes = from p in _context.Pacientes
+                            from p1 in _context.Personas
+                            where p.IdPac == IdPaciente
+                            where p.IdPersona == p1.IdPersona
+                            select new PacientesPer()
+                            {
+                                IdPaciente = p.IdPac,
+                                IdPersona = p1.IdPersona,
+                                Id = p1.Id,
+                                Nombres = p1.Nombres,
+                                Apellidos = p1.Apellidos,
+                                Genero = p1.Genero,
+                                Telefono = p1.Telefono,
+                                FechaNacimiento = p.FechaNacimiento,
+                                Ciudad = p.Ciudad,
+                                Direccion = p.Direccion,
+                                Latitud = p.Latitud,
+                                Longitud = p.Longitud,
+                            };
+            PacientesPer pacientesPer = pacientes.FirstOrDefault();
+            return pacientesPer; 
         }
     }
 }

@@ -5911,19 +5911,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\pc\\.nuget\\packages\\": {}
+    "C:\\Users\\stefy\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\pc\\Desktop\\Hospitalizacion\\HospiEnCasa.App\\HospiEnCasa.App.FrontEnd\\HospiEnCasa.App.FrontEnd.csproj",
+      "projectUniqueName": "C:\\Users\\stefy\\Documents\\GitHub\\DS03G2_Hospitalizacion_en_Casa\\HospiEnCasa.App\\HospiEnCasa.App.FrontEnd\\HospiEnCasa.App.FrontEnd.csproj",
       "projectName": "HospiEnCasa.App.FrontEnd",
-      "projectPath": "C:\\Users\\pc\\Desktop\\Hospitalizacion\\HospiEnCasa.App\\HospiEnCasa.App.FrontEnd\\HospiEnCasa.App.FrontEnd.csproj",
-      "packagesPath": "C:\\Users\\pc\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\pc\\Desktop\\Hospitalizacion\\HospiEnCasa.App\\HospiEnCasa.App.FrontEnd\\obj\\",
+      "projectPath": "C:\\Users\\stefy\\Documents\\GitHub\\DS03G2_Hospitalizacion_en_Casa\\HospiEnCasa.App\\HospiEnCasa.App.FrontEnd\\HospiEnCasa.App.FrontEnd.csproj",
+      "packagesPath": "C:\\Users\\stefy\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\stefy\\Documents\\GitHub\\DS03G2_Hospitalizacion_en_Casa\\HospiEnCasa.App\\HospiEnCasa.App.FrontEnd\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\pc\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        "C:\\Users\\stefy\\AppData\\Roaming\\NuGet\\NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "netcoreapp3.1"
@@ -5934,8 +5934,8 @@
       "frameworks": {
         "netcoreapp3.1": {
           "projectReferences": {
-            "C:\\Users\\pc\\Desktop\\Hospitalizacion\\HospiEnCasa.App\\HospiEnCasa.App.Persistencia\\HospiEnCasa.App.Persistencia.csproj": {
-              "projectPath": "C:\\Users\\pc\\Desktop\\Hospitalizacion\\HospiEnCasa.App\\HospiEnCasa.App.Persistencia\\HospiEnCasa.App.Persistencia.csproj"
+            "C:\\Users\\stefy\\Documents\\GitHub\\DS03G2_Hospitalizacion_en_Casa\\HospiEnCasa.App\\HospiEnCasa.App.Persistencia\\HospiEnCasa.App.Persistencia.csproj": {
+              "projectPath": "C:\\Users\\stefy\\Documents\\GitHub\\DS03G2_Hospitalizacion_en_Casa\\HospiEnCasa.App\\HospiEnCasa.App.Persistencia\\HospiEnCasa.App.Persistencia.csproj"
             }
           }
         }

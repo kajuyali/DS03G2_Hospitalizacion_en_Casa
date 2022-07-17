@@ -7,3 +7,12 @@ C:\Users\pc\Desktop\Hospitalizacion\HospiEnCasa.App\HospiEnCasa.App.Persistencia
 C:\Users\pc\Desktop\Hospitalizacion\HospiEnCasa.App\HospiEnCasa.App.Persistencia\obj\Debug\netstandard2.1\HospiEnCasa.App.Persistencia.csproj.CoreCompileInputs.cache
 C:\Users\pc\Desktop\Hospitalizacion\HospiEnCasa.App\HospiEnCasa.App.Persistencia\obj\Debug\netstandard2.1\HospiEnCasa.App.Persistencia.dll
 C:\Users\pc\Desktop\Hospitalizacion\HospiEnCasa.App\HospiEnCasa.App.Persistencia\obj\Debug\netstandard2.1\HospiEnCasa.App.Persistencia.pdb
+C:\Users\stefy\Documents\GitHub\DS03G2_Hospitalizacion_en_Casa\HospiEnCasa.App\HospiEnCasa.App.Persistencia\obj\Debug\netstandard2.1\HospiEnCasa.App.Persistencia.csprojAssemblyReference.cache
+C:\Users\stefy\Documents\GitHub\DS03G2_Hospitalizacion_en_Casa\HospiEnCasa.App\HospiEnCasa.App.Persistencia\obj\Debug\netstandard2.1\HospiEnCasa.App.Persistencia.AssemblyInfoInputs.cache
+C:\Users\stefy\Documents\GitHub\DS03G2_Hospitalizacion_en_Casa\HospiEnCasa.App\HospiEnCasa.App.Persistencia\obj\Debug\netstandard2.1\HospiEnCasa.App.Persistencia.AssemblyInfo.cs
+C:\Users\stefy\Documents\GitHub\DS03G2_Hospitalizacion_en_Casa\HospiEnCasa.App\HospiEnCasa.App.Persistencia\obj\Debug\netstandard2.1\HospiEnCasa.App.Persistencia.csproj.CoreCompileInputs.cache
+C:\Users\stefy\Documents\GitHub\DS03G2_Hospitalizacion_en_Casa\HospiEnCasa.App\HospiEnCasa.App.Persistencia\obj\Debug\netstandard2.1\HospiEnCasa.App.Persistencia.dll
+C:\Users\stefy\Documents\GitHub\DS03G2_Hospitalizacion_en_Casa\HospiEnCasa.App\HospiEnCasa.App.Persistencia\obj\Debug\netstandard2.1\HospiEnCasa.App.Persistencia.pdb
+C:\Users\stefy\Documents\GitHub\DS03G2_Hospitalizacion_en_Casa\HospiEnCasa.App\HospiEnCasa.App.Persistencia\bin\Debug\netstandard2.1\HospiEnCasa.App.Persistencia.deps.json
+C:\Users\stefy\Documents\GitHub\DS03G2_Hospitalizacion_en_Casa\HospiEnCasa.App\HospiEnCasa.App.Persistencia\bin\Debug\netstandard2.1\HospiEnCasa.App.Persistencia.dll
+C:\Users\stefy\Documents\GitHub\DS03G2_Hospitalizacion_en_Casa\HospiEnCasa.App\HospiEnCasa.App.Persistencia\bin\Debug\netstandard2.1\HospiEnCasa.App.Persistencia.pdb
