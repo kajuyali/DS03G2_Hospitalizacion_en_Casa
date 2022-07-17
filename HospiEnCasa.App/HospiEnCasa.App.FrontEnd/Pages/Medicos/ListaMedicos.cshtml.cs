@@ -5,20 +5,26 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.Extensions.Logging;
+using HospiEnCasa.App.Persistencia.Models;
+using HospiEnCasa.App.Persistencia.AppRepositorios;
 
 namespace HospiEnCasa.App.FrontEnd.Pages.Medicos
 {
     public class ListaMedicos : PageModel
     {
         private readonly ILogger<ListaMedicos> _logger;
+        private readonly IRepositorioMedico _repositorioMedico;
+        public IEnumerable<MedicosPer> Medicos { get; set; }
 
-        public ListaMedicos(ILogger<ListaMedicos> logger)
+        public ListaMedicos(ILogger<ListaMedicos> logger, IRepositorioMedico repositorioMedico)
         {
             _logger = logger;
+            _repositorioMedico = repositorioMedico;
         }
 
         public void OnGet()
         {
+            Medicos = _repositorioMedico.ObtenerMedicos();
         }
     }
 }

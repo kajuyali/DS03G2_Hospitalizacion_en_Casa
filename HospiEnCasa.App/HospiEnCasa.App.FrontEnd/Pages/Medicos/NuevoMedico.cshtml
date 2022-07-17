@@ -10,8 +10,6 @@
             <p class="form-title font-weight-bold">Formulario Medico</p>
         </div>
         <form method="post">
-            <input type="hidden" asp-for="Persona.IdPersona" />
-            <input type="hidden" asp-for="Medico.IdMedico" />
             <div class="form-group">
                 <div class="row">
                     <div class="col">
@@ -52,7 +50,6 @@
                             <input type="text" class="form-control" asp-for="@Model.Medico.Registro" placeholder="Registro Medico">
                         </div>
                     </div>
-                    <input type="hidden" asp-for="@Model.Medico.IdPersona" value="Persona.IdPersona" />
                 </div>
                 <button type="submit" class="btn btn-primary btn-lg btn-block">Añadir Medico</button>
         </form>
