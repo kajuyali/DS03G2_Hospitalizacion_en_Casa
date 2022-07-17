@@ -168,3 +168,4 @@ C:\Users\stefy\Documents\GitHub\DS03G2_Hospitalizacion_en_Casa\HospiEnCasa.App\H
 C:\Users\stefy\Documents\GitHub\DS03G2_Hospitalizacion_en_Casa\HospiEnCasa.App\HospiEnCasa.App.FrontEnd\obj\Debug\netcoreapp3.1\staticwebassets\HospiEnCasa.App.FrontEnd.StaticWebAssets.Manifest.cache
 C:\Users\stefy\Documents\GitHub\DS03G2_Hospitalizacion_en_Casa\HospiEnCasa.App\HospiEnCasa.App.FrontEnd\obj\Debug\netcoreapp3.1\staticwebassets\HospiEnCasa.App.FrontEnd.StaticWebAssets.xml
 C:\Users\stefy\Documents\GitHub\DS03G2_Hospitalizacion_en_Casa\HospiEnCasa.App\HospiEnCasa.App.FrontEnd\obj\Debug\netcoreapp3.1\HospiEnCasa.App.FrontEnd.genruntimeconfig.cache
+C:\Users\pc\Desktop\Hospitalizacion\HospiEnCasa.app\HospiEnCasa.app.Frontend\obj\Debug\netcoreapp3.1\Razor\Pages\Medicos\DetalleMedico.cshtml.g.cs
