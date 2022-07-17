@@ -16,26 +16,25 @@
               <th>Nombres</th>
               <th>Apellidos</th>
               <th>Telefono</th>
-              <th>Ciudad</th>
-              <th>Genero</th>
-              <th>Fecha de Nacimiento</th>
+              <th>Especialidad</th>
               <th>Acciones</th>
             </tr>
           </thead>
           <tbody>
-            <tr>
-              <td>13216546</td>
-              <td>Juana Carolina</td>
-              <td>Mendoza Perez</td>
-              <td>312546462</td>
-              <td>Bucaramanga</td>
-              <td>Femenino</td>
-              <td>12/01/1998</td>
+            @foreach (var medico in Model.Medicos)
+            {
+              <tr>
+              <td>@medico.Id</td>
+              <td>@medico.Nombres</td>
+              <td>@medico.Apellidos</td>
+              <td>@medico.Telefono</td>
+              <td>@medico.Especialidad</td>
               <td class="d-fle align-items-center">
                 <a href="#" class="ml-2"><i class="fa fa-cog" aria-hidden="true"></i></a>
                 <a href="#" class="ml-4"><i class="fa fa-trash-o" aria-hidden="true"></i></a>
               </td>
             </tr>
+            }
           </tbody>
         </table>
       </div>

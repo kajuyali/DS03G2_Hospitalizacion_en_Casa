@@ -12,8 +12,7 @@
             <form method="post">
               <div class="form-group">
                 <div class="row">
-                  <input type="hidden" asp-for="Persona.IdPersona">
-                  <input type="hidden" asp-for="Paciente.IdPac">
+
                   <div class="col">
                     <input type="text" class="form-control" asp-for="Persona.Nombres" placeholder="Nombres">
                   </div>
@@ -39,9 +38,9 @@
                     </div>
                     <select class="custom-select" id="genero" asp-for="Persona.Genero">
                       <option selected>-- Selecciona una opción --</option>
-                      <option value="masculino">Masculino</option>
-                      <option value="femenino">Femenino</option>
-                      <option value="otro">Otro</option>
+                      <option value="Masculino">Masculino</option>
+                      <option value="Femenino">Femenino</option>
+                      <option value="Otro">Otro</option>
                     </select>
                   </div>
                 </div>
@@ -65,7 +64,7 @@
                   </div>
                   <div class="col">
                     <input type="text" class="form-control" asp-for="Paciente.Longitud" placeholder="Longitud">
-                    <input type="hidden" asp-for="Paciente.IdPersona" value="Persona.IdPersona">
+                    
                   </div>
                 </div>
               </div> 

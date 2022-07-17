@@ -8,10 +8,10 @@ namespace HospiEnCasa.App.Persistencia.AppRepositorios
 {
     public interface IRepositorioMedico
     {
-        IEnumerable<Medico> ObtenerTodos();
+        IEnumerable<MedicosPer> ObtenerMedicos();
         Medico Crear(Medico medico);
         Medico Actualizar(Medico medico);
         void Eliminar(int id);
-        Medico ObtenerPorId(int id);
+
     }
 }
