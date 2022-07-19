@@ -8,50 +8,44 @@
           <div class="card-body">
               <div class="card-title text-center">
                   <p class="form-title font-weight-bold">Formulario Familiar Designado</p>
-
               </div>
-              <form>
-                <div class="input-group mb-3">
-                  <div class="input-group-prepend">
-                    <label class="input-group-text" for="PacienteID">Paciente</label>
-                  </div>
-                  <select class="custom-select" id="pacienteID">
-                    <option selected>-- Selecciona un Paciente -- (Desde la BD) </option>
-                    <option value="paciente1">Documento1 - PacienteNombre1</option>
-                    <option value="paciente2">Documento2 - PacienteNombre1</option>
-                    <option value="paciente3">...</option>
-                  </select>
-              </div> <br>
-
+              <form method="post">
+              <div class="form-group">
+                          <br><br><br>
+                      <div class="row">
+                          <h5>Paciente:<br>@Model.Paciente.Id - @Model.Paciente.Nombres  @Model.Paciente.Apellidos </h5>
+                       </div>
+               </div>
+               <hr>    
               <div class="form-group">
                       <div class="row">
                           <div class="col">
-                              <input type="text" class="form-control" id="nombre" placeholder="Nombres de Familiar">
+                              <input type="text" class="form-control" asp-for="Persona.Nombres" placeholder="Nombres de Familiar">
                           </div>
                           <div class="col">
-                              <input type="text" class="form-control" id="apellidos" placeholder="Apellidos de Familiar">
+                              <input type="text" class="form-control" asp-for="Persona.Apellidos" placeholder="Apellidos de Familiar">
                           </div>
                       </div>
-                  </div>    
+              </div>    
                       <div class="form-group mt-4">
                           <div class="row">
                               <div class="col">
-                                  <input type="text" class="form-control" id="cedula" placeholder="Documento">
+                                  <input type="text" class="form-control" asp-for="Persona.Id" placeholder="Documento">
                               </div>
                               <div class="col">
-                                  <input type="text" class="form-control" id="telefono" placeholder="Teléfono">
+                                  <input type="text" class="form-control" asp-for="Persona.Telefono" placeholder="Teléfono">
                               </div>
                           </div>
                       </div>
                       <div class="form-group mt-4">
-                        <input type="text" class="form-control" id="correo" placeholder="Correo Electrónico">
+                        <input type="text" class="form-control" asp-for="Familiar.Correo" placeholder="Correo Electrónico">
                     </div>
                     
                       <div class="input-group mb-3">
                           <div class="input-group-prepend">
                             <label class="input-group-text" for="inputGroupSelect01">Género</label>
                           </div>
-                          <select class="custom-select" id="inputGroupSelect01">
+                          <select class="custom-select" asp-for="Persona.Genero">
                             <option selected>-- Selecciona una opción --</option>
                             <option value="masculino">Masculino</option>
                             <option value="femenino">Femenino</option>
@@ -60,9 +54,11 @@
                       </div>
 
                     <div class="form-group mt-4">
-                          <input type="text" class="form-control" id="parentesco" placeholder="Parentesco">
+                          <input type="text" class="form-control" asp-for="Familiar.Parentesco" placeholder="Parentesco">
                       </div>
-                      <button type="button" class="btn btn-primary btn-lg btn-block">Añadir Familiar</button>
+                    <div class="mt-4">
+                      <button type="submit" class="btn btn-primary btn-lg btn-block">Añadir Familiar</button>
+                    </div>
               </form>
           </div>
         </div>
