@@ -7247,19 +7247,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\pc\\.nuget\\packages\\": {}
+    "C:\\Users\\javie\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\pc\\Desktop\\Hospitalizacion\\HospiEnCasa.app\\HospiEnCasa.App.Persistencia\\HospiEnCasa.App.Persistencia.csproj",
+      "projectUniqueName": "C:\\Users\\javie\\Documents\\GitHub\\DS03G2_Hospitalizacion_en_CasavF\\HospiEnCasa.App\\HospiEnCasa.App.Persistencia\\HospiEnCasa.App.Persistencia.csproj",
       "projectName": "HospiEnCasa.App.Persistencia",
-      "projectPath": "C:\\Users\\pc\\Desktop\\Hospitalizacion\\HospiEnCasa.app\\HospiEnCasa.App.Persistencia\\HospiEnCasa.App.Persistencia.csproj",
-      "packagesPath": "C:\\Users\\pc\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\pc\\Desktop\\Hospitalizacion\\HospiEnCasa.app\\HospiEnCasa.App.Persistencia\\obj\\",
+      "projectPath": "C:\\Users\\javie\\Documents\\GitHub\\DS03G2_Hospitalizacion_en_CasavF\\HospiEnCasa.App\\HospiEnCasa.App.Persistencia\\HospiEnCasa.App.Persistencia.csproj",
+      "packagesPath": "C:\\Users\\javie\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\javie\\Documents\\GitHub\\DS03G2_Hospitalizacion_en_CasavF\\HospiEnCasa.App\\HospiEnCasa.App.Persistencia\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\pc\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        "C:\\Users\\javie\\AppData\\Roaming\\NuGet\\NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "netstandard2.1"
@@ -7317,7 +7317,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.421\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.420\\RuntimeIdentifierGraph.json"
       }
     }
   }

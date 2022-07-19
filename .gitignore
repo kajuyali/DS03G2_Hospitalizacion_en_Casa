@@ -1,2 +1,5 @@
 #Ignorar archivo de configuración
 appsettings.json
+bin/
+.cache
+obj/

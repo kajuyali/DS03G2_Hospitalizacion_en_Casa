@@ -5911,19 +5911,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\pc\\.nuget\\packages\\": {}
+    "C:\\Users\\javie\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\pc\\Desktop\\Hospitalizacion\\HospiEnCasa.app\\HospiEnCasa.app.Frontend\\HospiEnCasa.App.FrontEnd.csproj",
+      "projectUniqueName": "C:\\Users\\javie\\Documents\\GitHub\\DS03G2_Hospitalizacion_en_CasavF\\HospiEnCasa.App\\HospiEnCasa.App.FrontEnd\\HospiEnCasa.App.FrontEnd.csproj",
       "projectName": "HospiEnCasa.App.FrontEnd",
-      "projectPath": "C:\\Users\\pc\\Desktop\\Hospitalizacion\\HospiEnCasa.app\\HospiEnCasa.app.Frontend\\HospiEnCasa.App.FrontEnd.csproj",
-      "packagesPath": "C:\\Users\\pc\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\pc\\Desktop\\Hospitalizacion\\HospiEnCasa.app\\HospiEnCasa.app.Frontend\\obj\\",
+      "projectPath": "C:\\Users\\javie\\Documents\\GitHub\\DS03G2_Hospitalizacion_en_CasavF\\HospiEnCasa.App\\HospiEnCasa.App.FrontEnd\\HospiEnCasa.App.FrontEnd.csproj",
+      "packagesPath": "C:\\Users\\javie\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\javie\\Documents\\GitHub\\DS03G2_Hospitalizacion_en_CasavF\\HospiEnCasa.App\\HospiEnCasa.App.FrontEnd\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\pc\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        "C:\\Users\\javie\\AppData\\Roaming\\NuGet\\NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "netcoreapp3.1"
@@ -5934,8 +5934,8 @@
       "frameworks": {
         "netcoreapp3.1": {
           "projectReferences": {
-            "C:\\Users\\pc\\Desktop\\Hospitalizacion\\HospiEnCasa.app\\HospiEnCasa.App.Persistencia\\HospiEnCasa.App.Persistencia.csproj": {
-              "projectPath": "C:\\Users\\pc\\Desktop\\Hospitalizacion\\HospiEnCasa.app\\HospiEnCasa.App.Persistencia\\HospiEnCasa.App.Persistencia.csproj"
+            "C:\\Users\\javie\\Documents\\GitHub\\DS03G2_Hospitalizacion_en_CasavF\\HospiEnCasa.App\\HospiEnCasa.App.Persistencia\\HospiEnCasa.App.Persistencia.csproj": {
+              "projectPath": "C:\\Users\\javie\\Documents\\GitHub\\DS03G2_Hospitalizacion_en_CasavF\\HospiEnCasa.App\\HospiEnCasa.App.Persistencia\\HospiEnCasa.App.Persistencia.csproj"
             }
           }
         }
@@ -5972,7 +5972,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.421\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.420\\RuntimeIdentifierGraph.json"
       }
     }
   }

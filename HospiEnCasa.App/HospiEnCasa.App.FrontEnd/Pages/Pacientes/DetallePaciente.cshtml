@@ -16,10 +16,9 @@
                         <h6 class="f-w-600 text-dark">@Model.Paciente.Nombres  @Model.Paciente.Apellidos</h6>
                         <p class="text-dark">Paciente</p>
                         <div class="mt-5">
-                          <button class="btn btn-primary btn-sm btn-round">
+                            <a asp-page="/Pacientes/NuevoFamiliar" asp-route-IdPaciente="@Model.Paciente.IdPaciente" button class="btn btn-primary btn-sm btn-round">
                             <i class="fa fa-plus mr-1"></i>
-                            Agregar Familiar
-                          </button>
+                            Agregar Familiar</a>
                         </div>
                         <div class="mt-3">
                           <button class="btn btn-primary btn-sm btn-round">
