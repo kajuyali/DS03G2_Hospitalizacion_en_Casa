@@ -68,5 +68,10 @@ namespace HospiEnCasa.App.Persistencia.AppRepositorios
             PacientesPer pacientesPer = pacientes.FirstOrDefault();
             return pacientesPer; 
         }
+        public int Contar()
+        {
+            int countval = _context.Pacientes.Count();
+            return countval;
+        }
     }
 }

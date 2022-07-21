@@ -79,5 +79,10 @@ namespace HospiEnCasa.App.Persistencia.AppRepositorios
                 _context.SaveChanges();
             }
         }
+        public int Contar()
+        {
+            int countval = _context.Medicos.Count();
+            return countval;
+        }
     }
 }

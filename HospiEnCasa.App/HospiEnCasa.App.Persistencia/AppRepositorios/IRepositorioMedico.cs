@@ -13,6 +13,6 @@ namespace HospiEnCasa.App.Persistencia.AppRepositorios
         Medico Crear(Medico medico);
         Medico Actualizar(Medico medico);
         void Eliminar(int id);
-
+        int Contar();
     }
 }
