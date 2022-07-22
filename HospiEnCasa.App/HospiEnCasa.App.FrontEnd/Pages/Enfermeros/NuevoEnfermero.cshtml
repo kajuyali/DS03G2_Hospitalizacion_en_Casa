@@ -1,0 +1,57 @@
+@page
+@model HospiEnCasa.App.FrontEnd.Pages.Enfermeros.NuevoEnfermero
+@{
+    ViewData["Title"] = "Nuevo Enfermero";
+}
+
+<div class="card p-2 m-5">
+    <div class="card-body">
+        <div class="card-title text-center">
+            <p class="form-title font-weight-bold">Formulario Enfermero</p>
+        </div>
+        <form method="post">
+            <div class="form-group">
+                <div class="row">
+                    <div class="col">
+                        <input type="text" class="form-control" asp-for="@Model.Persona.Nombres" placeholder="Nombres">
+                    </div>
+                    <div class="col">
+                        <input type="text" class="form-control" asp-for="@Model.Persona.Apellidos" placeholder="Apellidos">
+                    </div>
+                </div>
+            </div>    
+                <div class="form-group mt-4">
+                    <div class="row">
+                        <div class="col">
+                            <input type="text" class="form-control" asp-for="@Model.Persona.Id" placeholder="Documento">
+                        </div>
+                        <div class="col">
+                            <input type="tel" class="form-control" asp-for="@Model.Persona.Telefono" placeholder="Telefono">
+                        </div>
+                    </div>
+                </div>
+                <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                    <label class="input-group-text" for="genero">Genero</label>
+                    </div>
+                    <select class="custom-select" id="genero" asp-for="@Model.Persona.Genero">
+                    <option selected>-- Selecciona una opción --</option>
+                    <option value="Masculino">Masculino</option>
+                    <option value="Femenino">Femenino</option>
+                    <option value="Otro">Otro</option>
+                    </select>
+                </div>
+                <div class="form-group mt-4">
+                    <div class="row">
+                        <div class="col">
+                            <input type="text" class="form-control" asp-for="@Model.Enfermero.Especialidad" placeholder="Especialidad">
+                        </div>
+                        <div class="col">
+                            <input type="text" class="form-control" asp-for="@Model.Enfermero.Registro" placeholder="Registro Enfermero">
+                        </div>
+                    </div>
+                </div>
+                <button type="submit" class="btn btn-primary btn-lg btn-block">Añadir Enfermero</button>
+        </form>
+    </div>
+</div>
