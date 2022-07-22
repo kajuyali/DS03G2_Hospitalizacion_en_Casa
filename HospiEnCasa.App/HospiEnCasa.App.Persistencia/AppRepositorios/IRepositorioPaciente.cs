@@ -11,5 +11,7 @@ namespace HospiEnCasa.App.Persistencia.AppRepositorios
         Paciente Crear(Paciente paciente);
         IEnumerable<PacientesPer> ObtenerPacientes();
         PacientesPer ObtenerPaciente(int IdPaciente);
+        int Contar();
+        MedicosPer ObtenerMedicoAsignado(int IdPaciente);
     }
 }

@@ -68,5 +68,33 @@ namespace HospiEnCasa.App.Persistencia.AppRepositorios
             PacientesPer pacientesPer = pacientes.FirstOrDefault();
             return pacientesPer; 
         }
+        public int Contar()
+        {
+            int countval = _context.Pacientes.Count();
+            return countval;
+        }
+        public MedicosPer ObtenerMedicoAsignado(int IdPaciente)
+        {
+            var asignado = from p1 in _context.Medicos
+                            from p2 in _context.Asignados
+                            from p3 in _context.Personas
+                            where p2.IdPaciente == IdPaciente
+                            where p1.IdMedico == p2.IdMedico
+                            where p1.IdPersona == p3.IdPersona
+                            select new MedicosPer()
+                            {
+                                IdMedico = p1.IdMedico,
+                                IdPersona = p1.IdPersona,
+                                Id = p3.Id,
+                                Nombres = p3.Nombres,
+                                Apellidos = p3.Apellidos,
+                                Genero = p3.Genero,
+                                Telefono = p3.Telefono,
+                                Especialidad = p1.Especialidad,
+                                Registro = p1.Registro
+                            };
+            MedicosPer Medico = asignado.FirstOrDefault();
+            return Medico;
+        }
     }
 }
