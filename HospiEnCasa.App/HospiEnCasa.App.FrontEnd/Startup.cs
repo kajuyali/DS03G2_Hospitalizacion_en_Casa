@@ -34,6 +34,7 @@ namespace HospiEnCasa.App.FrontEnd
             services.AddTransient<IRepositorioMedico, RepositorioMedico>();
             services.AddTransient<IRepositorioPaciente, RepositorioPaciente>();
             services.AddTransient<IRepositorioFamiliar, RepositorioFamiliar>();
+            services.AddTransient<IRepositorioEnfermero, RepositorioEnfermero>();
             services.AddTransient<IRepositorioSigno, RepositorioSigno>();
             services.AddTransient<IRepositorioAsignado, RepositorioAsignado>();
             services.AddMemoryCache();
