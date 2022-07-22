@@ -16,16 +16,17 @@
                         <h6 class="f-w-600 text-dark">@Model.Paciente.Nombres  @Model.Paciente.Apellidos</h6>
                         <p class="text-dark">Paciente</p>
                         <div class="mt-5">
-                            <a asp-page="/Pacientes/NuevoFamiliar" asp-route-IdPaciente="@Model.Paciente.IdPaciente" button class="btn btn-primary btn-sm btn-round">
+                            <a asp-page="/Pacientes/NuevoFamiliar" asp-route-IdPaciente="@Model.Paciente.IdPaciente" class="btn btn-primary btn-sm btn-round">
                             <i class="fa fa-plus mr-1"></i>
                             Agregar Familiar</a>
                         </div>
                         <div class="dropdown">
-                          <a class="btn btn-primary btn-sm btn-round dropdown-toggle mt-3" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                          <a class="btn btn-primary btn-sm btn-round dropdown-toggle mt-3" href="#" role="button" id="dropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             Mas Opciones
                           </a>
                         
-                          <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                          <div class="dropdown-menu" aria-labelledby="dropdown">
+                            <a class="dropdown-item" asp-page="/Pacientes/AsignarPersonal" asp-route-IdPaciente="@Model.Paciente.IdPaciente">Asignar Personal Medico</a>
                             <a class="dropdown-item" href="#">Consultar historia</a>
                             <a class="dropdown-item" href="#">Crear Sugerencia</a>
                           </div>
@@ -57,6 +58,15 @@
                             <div class="col-sm-6 mt-2">
                                 <p class="m-b-10 f-w-600">Familiar Asignado</p>
                                 <h6 class="text-muted f-w-400">Sin asignar</h6>
+                            </div>
+                            <div class="col-sm-6 mt-2">
+                                <p class="m-b-10 f-w-600">Medico Asignado</p>
+                                @if (Model.MedicoAsignado != null)
+                                {
+                                  <a class="text-active f-w-400" asp-page="/Medicos/DetalleMedico" asp-route-IdMedico="@Model.MedicoAsignado.IdMedico">@Model.MedicoAsignado.Nombres @Model.MedicoAsignado.Apellidos</a>
+                                } else {
+                                  <h6 class="text-muted f-w-400">Sin asignar</h6>
+                                }
                             </div>
                       </div>
                         <h6 class="m-b-20 m-t-40 p-b-5 b-b-default f-w-600">Ubicación</h6>
