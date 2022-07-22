@@ -22,7 +22,7 @@
           </div>
         </div>
       
-        <p class="text-gray font-weight-bold text-uppercase px-3 small pb-4 mb-0">Menu Principal</p>
+        <p class="text-gray font-weight-bold text-uppercase px-3 small pb-4 mb-0">Menú Principal</p>
       
         <ul class="nav flex-column bg-white mb-0">
           <li class="nav-item">
@@ -58,7 +58,7 @@
           <li class="nav-item">
             <div class="nav-link text-dark" data-toggle="collapse" data-target="#medicosContent" aria-controls="medicosContent" aria-expanded="false" aria-label="Toggle navigation">
               <i class="fa fa-user-md mr-3 text-primary"></i>
-                      <span>Medicos</span>
+                      <span>Médicos</span>
             </div>
             
             <div class="collapse" id="medicosContent">
@@ -67,13 +67,13 @@
                   <li class="nav-item">
                     <a asp-page="/Medicos/NuevoMedico" class="nav-link text-dark bg-light hover">
                       <i class="fa fa-plus mr-3 text-primary" aria-hidden="true"></i>
-                      Añadir Medico
+                      Añadir Médico
                     </a>
                   </li>
                   <li class="nav-item">
                     <a asp-page="/Medicos/ListaMedicos" class="nav-link text-dark bg-light">
                       <i class="fa fa-search mr-3 text-primary"></i>
-                      Lista de Medicos
+                      Lista de Médicos
                     </a>
                   </li>
                 </ul>
@@ -90,13 +90,13 @@
               <div class="bg-light p-2">
                 <ul class="nav">
                   <li class="nav-item">
-                    <a href="#" class="nav-link text-dark bg-light hover">
+                    <a asp-page="/Enfermeros/NuevoEnfermero" class="nav-link text-dark bg-light hover">
                       <i class="fa fa-plus mr-3 text-primary" aria-hidden="true"></i>
                       Añadir Enfermero
                     </a>
                   </li>
                   <li class="nav-item">
-                    <a href="#" class="nav-link text-dark bg-light">
+                    <a asp-page="/Enfermeros/ListaEnfermeros" class="nav-link text-dark bg-light">
                       <i class="fa fa-search mr-3 text-primary"></i>
                       Consultar Enfermero
                     </a>
