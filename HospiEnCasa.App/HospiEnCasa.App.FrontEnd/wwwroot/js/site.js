@@ -20,5 +20,6 @@ $(document).ready(function () {
             "sPrevious": "Anterior"
         }
       }
-    });
+    });      
+    $('.selectpicker').selectpicker();
 });

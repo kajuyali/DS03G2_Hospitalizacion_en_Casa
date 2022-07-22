@@ -1,0 +1,48 @@
+@page
+@model HospiEnCasa.App.FrontEnd.Pages.Pacientes.AsignarPersonal
+@{
+    ViewData["Title"] = "Asignar Personal";
+}
+
+<div class="card p-2 m-5">
+    <div class="card-body">
+        <div class="card-title text-center">
+            <p class="form-title font-weight-bold">Asignar Personal Medico</p>
+        </div>
+        <h4 class="text-center mb-3">Datos del Paciente:</h4>
+            <div class="form-group">
+                <div class="row">
+                    <div class="col">
+                        <label>Nombre:</label>
+                        <p class="font-weight-bold">@Model.Paciente.Nombres</p>
+                    </div>
+                    <div class="col">
+                        <label>Apellido:</label>
+                        <p class="font-weight-bold">@Model.Paciente.Apellidos</p>
+                    </div>
+                </div>
+            </div>  
+        <form method="post">   
+            <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                    <label class="input-group-text">Medico</label>
+                </div>
+                <select class="ml-2 selectpicker" data-live-search="true" width="auto" title="Selecciona un medico" data-size="5" asp-for="@Model.Asignado.IdMedico">
+                    @foreach (var medico in Model.Medicos)
+                    {
+                        <option value="@medico.IdMedico" data-subtext="@medico.Especialidad">@medico.Nombres @medico.Apellidos</option>
+                    }
+                </select>
+            </div>
+            <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                    <label class="input-group-text">Enfermero</label>
+                </div>
+                <select class="ml-2 selectpicker" data-live-search="true" width="auto" title="Selecciona un enfermero" asp-for="@Model.Asignado.IdEnfermero">
+                    <option value="1">Elena Miquelena</option>
+                </select>
+            </div>
+            <button type="submit" class="btn btn-primary btn-lg btn-block">Asignar</button>
+        </form>
+    </div>
+</div>

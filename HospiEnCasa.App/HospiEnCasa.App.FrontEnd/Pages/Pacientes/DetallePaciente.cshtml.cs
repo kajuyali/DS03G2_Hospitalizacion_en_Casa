@@ -17,6 +17,7 @@ namespace HospiEnCasa.App.FrontEnd.Pages.Pacientes
         private readonly IRepositorioSigno repositorioSigno;
         public PacientesPer Paciente { get; set; }
         public ListaSignosPaciente SignoVitales { get; set; }
+        public MedicosPer MedicoAsignado { get; set; }
 
         public DetallePaciente(ILogger<DetallePaciente> logger, IRepositorioPaciente repositorioPaciente, IRepositorioSigno repositorioSigno)
         {
@@ -28,6 +29,7 @@ namespace HospiEnCasa.App.FrontEnd.Pages.Pacientes
         {
             Paciente = repositorioPaciente.ObtenerPaciente(IdPaciente);
             SignoVitales = repositorioSigno.ObtenerSignosPaciente(IdPaciente);
+            MedicoAsignado = repositorioPaciente.ObtenerMedicoAsignado(IdPaciente);
             if (Paciente == null) {
                 return RedirectToPage("/Pacientes/ListaPacientes");
             }

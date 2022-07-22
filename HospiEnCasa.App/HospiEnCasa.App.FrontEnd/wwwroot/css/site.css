@@ -230,6 +230,10 @@ p {
   color: #919aa3 !important;
 }
 
+a .text-active {
+  color: #7579e7 !important;
+}
+
 .b-b-default {
   border-bottom: 1px solid #e0e0e0;
 }
@@ -399,9 +403,6 @@ p {
   text-decoration: wavy;
  }
 
- a {
-  color: #fff;
- }
  a:hover {
   text-decoration: none;
  }
