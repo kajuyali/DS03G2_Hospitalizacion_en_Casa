@@ -257,3 +257,155 @@ p {
 .m-t-40 {
   margin-top: 20px;
 }
+
+/* Separador */
+
+.divider {
+  display: flex;
+  margin-right: 50px;
+}
+
+.divider:before,
+  .divider:after {
+    content: "";
+    flex: 1;
+  }
+
+.line {
+  align-items: center;
+  margin-top: 1rem;
+  margin-bottom: 2rem;
+}
+
+.line:before,
+.line:after {
+  height: 1px;
+  margin: 0 1em;
+}
+
+.one-line:before,
+.one-line:after {
+  background: black;
+}
+
+/* Signos vitales */
+.pill {
+  --primary-clr: #1C204B;
+  --dot-clr: #BBC0FF;
+  --play: hsl(195, 74%, 62%);
+  width: 200px;
+  height: 170px;
+  border-radius: 10px;
+ }
+ 
+ .pill {
+  font-family: "Arial";
+  color: #fff;
+  display: grid;
+  cursor: pointer;
+  grid-template-rows: 50px 1fr;
+ }
+ 
+ .pill:hover .img-section {
+  transform: translateY(1em);
+ }
+ 
+ .pill-desc {
+  border-radius: 10px;
+  padding: 15px;
+  position: relative;
+  top: -10px;
+  display: grid;
+  gap: 10px;
+  background: var(--primary-clr);
+  color: #fff;
+ }
+
+ .bg-desc-light-blue {
+  background: #4D58FF;
+ }
+ .bg-desc-sky {
+  background: #6670FF;
+ }
+ .bg-desc-red {
+  background : #FF4D4D;
+ }
+ .bg-desc-pink {
+  background: #FF6666;
+ }
+ .bg-blanco {
+  background: #E6E6E6;
+ }
+ 
+ .pill-time {
+  font-size: 0.9rem;
+  font-weight: 500;
+ }
+ 
+ .img-section {
+  transition: 0.2s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+ }
+
+ .bg-blue {
+  background: hsl(195, 74%, 62%);
+ }
+ .bg-light-blue {
+  background: #99A0FF;
+ }
+ .bg-light-red {
+  background: #ff9999;
+ }
+ .bg-light-pink{
+  background: #ffd3d3;
+ } 
+ .bg-sky {
+  background: #b3ccff;
+ }
+ .pill-header {
+  display: flex;
+  align-items: center;
+  width: 100%;
+ }
+ 
+ .pill-title {
+  flex: 1;
+  font-size: 0.7em;
+  font-weight: 300;
+ }
+ 
+ .pill svg {
+  float: right;
+  max-width: 100%;
+  max-height: 100%;
+ }
+ .pill-menu {
+  display: flex;
+  gap: 4px;
+  margin-inline: auto;
+ }
+
+ .pill .dot {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: #FFF;
+ }
+ 
+.recent {
+  line-height: 0.3;
+  font-size: 1rem;
+  text-decoration: wavy;
+ }
+
+ a {
+  color: #fff;
+ }
+ a:hover {
+  text-decoration: none;
+ }
+
+ .link-a {
+  color: #4D58FF;
+ }
