@@ -14,21 +14,24 @@ namespace HospiEnCasa.App.FrontEnd.Pages.Pacientes
     {
         private readonly ILogger<DetallePaciente> _logger;
         private readonly IRepositorioPaciente repositorioPaciente;
+        private readonly IRepositorioSigno repositorioSigno;
         public PacientesPer Paciente { get; set; }
+        public ListaSignosPaciente SignoVitales { get; set; }
 
-        public DetallePaciente(ILogger<DetallePaciente> logger, IRepositorioPaciente repositorioPaciente)
+        public DetallePaciente(ILogger<DetallePaciente> logger, IRepositorioPaciente repositorioPaciente, IRepositorioSigno repositorioSigno)
         {
             _logger = logger;
             this.repositorioPaciente = repositorioPaciente;
+            this.repositorioSigno = repositorioSigno;
         }
-
         public IActionResult OnGet(int IdPaciente)
         {
             Paciente = repositorioPaciente.ObtenerPaciente(IdPaciente);
+            SignoVitales = repositorioSigno.ObtenerSignosPaciente(IdPaciente);
             if (Paciente == null) {
                 return RedirectToPage("/Pacientes/ListaPacientes");
             }
             return Page();
-        }
+        }   
     }
 }

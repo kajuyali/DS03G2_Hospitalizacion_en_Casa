@@ -1,0 +1,22 @@
+@page
+@model HospiEnCasa.App.FrontEnd.Pages.Pacientes.RegistrarSigno
+@{
+    ViewData["Title"] = "Registrar Signo";
+}
+
+<div class="card p-2 m-5">
+    <div class="card-body">
+    <div class="card-title text-center">
+        <p class="form-title font-weight-bold">Registrar Resultado de @Model.SignoVital.DescripSignoVital</p>
+    </div>
+        <form method="post">
+            <div class="form-group">
+                <label for="valor">Valor</label>
+                <input type="number" class="form-control" asp-for="@Model.SignoPaciente.Valor" placeholder="Ingresa el valor de la prueba">
+            </div>
+            <div>
+                <button type="submit" class="btn btn-primary">Guardar Signo</button>
+            </div>
+        </form>
+    </div>
+</div>
