@@ -15,23 +15,25 @@ namespace HospiEnCasa.App.FrontEnd.Pages
         private readonly ILogger<IndexModel> _logger;
         private readonly IRepositorioPaciente repositorioPaciente;
         private readonly IRepositorioMedico repositorioMedico;
+        private readonly IRepositorioEnfermero repositorioEnfermero;
         public int countvalPac { get; private set; } = 0;
         public int countvalMed { get; private set; } = 0;
-        public int countvalEnf { get; private set; } = 0; // Falta Implementar Enfermero
+        public int countvalEnf { get; private set; } = 0;
 
 
-        public IndexModel(ILogger<IndexModel> logger, IRepositorioPaciente repositorioPaciente, IRepositorioMedico repositorioMedico)
+        public IndexModel(ILogger<IndexModel> logger, IRepositorioPaciente repositorioPaciente, IRepositorioMedico repositorioMedico, IRepositorioEnfermero repositorioEnfermero)
         {
             _logger = logger;
             this.repositorioPaciente = repositorioPaciente;
             this.repositorioMedico = repositorioMedico;
+            this.repositorioEnfermero = repositorioEnfermero;
         }
 
         public void OnGet()
         {
             countvalPac = repositorioPaciente.Contar();
             countvalMed = repositorioMedico.Contar();
-            countvalEnf = 0;
+            countvalEnf = repositorioEnfermero.Contar();
         }
     }
 }

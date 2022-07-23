@@ -16,7 +16,7 @@
                         <h6 class="f-w-600 text-dark">@Model.Paciente.Nombres  @Model.Paciente.Apellidos</h6>
                         <p class="text-dark">Paciente</p>
                         <div class="mt-5">
-                            <a asp-page="/Pacientes/NuevoFamiliar" asp-route-IdPaciente="@Model.Paciente.IdPaciente" class="btn btn-primary btn-sm btn-round">
+                            <a asp-page="/Familiares/NuevoFamiliar" asp-route-IdPaciente="@Model.Paciente.IdPaciente" class="btn btn-primary btn-sm btn-round">
                             <i class="fa fa-plus mr-1"></i>
                             Agregar Familiar</a>
                         </div>
@@ -57,7 +57,12 @@
                           </div>
                             <div class="col-sm-6 mt-2">
                                 <p class="m-b-10 f-w-600">Familiar Asignado</p>
-                                <h6 class="text-muted f-w-400">Sin asignar</h6>
+                                @if (Model.FamiliarAsignado != null)
+                                {
+                                  <a class="text-active f-w-400" asp-page="/Familiares/DetalleFamiliar" asp-route-IdPaciente="@Model.FamiliarAsignado.IdPaciente">@Model.FamiliarAsignado.Nombres @Model.FamiliarAsignado.Apellidos</a>
+                                } else {
+                                  <h6 class="text-muted f-w-400">Sin asignar</h6>
+                                }
                             </div>
                             <div class="col-sm-6 mt-2">
                                 <p class="m-b-10 f-w-600">Medico Asignado</p>

@@ -21,7 +21,10 @@ namespace HospiEnCasa.App.Persistencia.AppRepositorios
             _context.SaveChanges();
             return enfermero;
         }
-        
-        
+        public int Contar()
+        {
+            int countval = _context.Enfermeros.Count();
+            return countval;
+        }
     }
 }
