@@ -41,5 +41,23 @@ namespace HospiEnCasa.App.Persistencia.AppRepositorios
             FamiliaresPer familiaresPer = familiares.FirstOrDefault();
             return familiaresPer; 
         }
+        public void Actualizar(FamiliaresPer familiar)
+        {
+            var familiarActualizar = _context.Familiars.FirstOrDefault(f => f.IdFamiliar == familiar.IdFamiliar);
+            if (familiarActualizar != null)
+            {
+                _context.Familiars.Attach(familiarActualizar);
+                _context.Entry(familiarActualizar).Property(f => f.Correo).IsModified = true; 
+                _context.SaveChanges();
+            }
+            var personaActualizar = _context.Personas.FirstOrDefault(f => f.IdPersona == familiar.IdPersona);
+            if (personaActualizar != null)
+            {
+                _context.Personas.Attach(personaActualizar);
+                _context.Entry(personaActualizar).Property(f => f.Telefono).IsModified = true; 
+                _context.SaveChanges();
+            }
+            
+        }
    }
 }
