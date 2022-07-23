@@ -49,15 +49,12 @@ namespace HospiEnCasa.App.FrontEnd.Pages.Pacientes
             {
                 return Page();
             }
-// insertar persona y medico en la base de datos
             repositorioPersona.Crear(Persona);
             Familiar.IdPersona = Persona.IdPersona;
             Familiar.IdPaciente = Paciente.IdPaciente;
             repositorioFamiliar.Crear(Familiar);
-//          return RedirectToPage("/Pacientes/DetallePaciente?IdPaciente=" + Paciente.IdPaciente);
-            return RedirectToPage("/Pacientes/DetallePaciente");
+            return RedirectToPage("/Pacientes/DetallePaciente", new {IdPaciente = Paciente.IdPaciente});
         }
-
     }
 }
 

@@ -9,6 +9,7 @@ namespace HospiEnCasa.App.Persistencia.AppRepositorios
     public interface IRepositorioEnfermero
     {
         Enfermero Crear(Enfermero enfermero);
+        int Contar();
 
     }
 }
