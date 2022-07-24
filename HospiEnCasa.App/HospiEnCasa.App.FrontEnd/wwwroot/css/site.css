@@ -422,7 +422,7 @@ a .text-active {
   color: #919aa3;
   top: -5px;
   display: block;
-  width: 125px;
+  width: 170px;
   border: none;
   border-bottom: 1px solid #919aa3;
   background: transparent;
@@ -441,7 +441,7 @@ a .text-active {
  .bar {
   position: relative;
   display: block;
-  width: 125px;
+  width: 170px;
  }
  
  .bar:before, .bar:after {
@@ -471,7 +471,7 @@ a .text-active {
  .highlight {
   position: absolute;
   height: 60%;
-  width: 100px;
+  width: 170px;
   top: 25%;
   left: 0;
   pointer-events: none;

@@ -14,20 +14,28 @@ namespace HospiEnCasa.App.FrontEnd.Pages.Familiares
     {
         private readonly ILogger<ActualizarFamiliar> _logger;
         private readonly IRepositorioFamiliar repositorioFamiliar;
+        private readonly IRepositorioPersona repositorioPersona;
+        private readonly IRepositorioPaciente repositorioPaciente;
+        [BindProperty]
         public FamiliaresPer Familiar { get; set; }
+        [BindProperty]
+        public PacientesPer Paciente { get; set; }
 
-        public ActualizarFamiliar(ILogger<ActualizarFamiliar> logger, IRepositorioFamiliar repositorioFamiliar)
+        public ActualizarFamiliar(ILogger<ActualizarFamiliar> logger, IRepositorioFamiliar repositorioFamiliar, IRepositorioPersona repositorioPersona, IRepositorioPaciente repositorioPaciente)
         {
             _logger = logger;
             this.repositorioFamiliar = repositorioFamiliar;
+            this.repositorioPersona = repositorioPersona;
+            this.repositorioPaciente = repositorioPaciente;
         }
 
         public IActionResult OnGet(int IdPaciente)
         {
             Familiar = repositorioFamiliar.ObtenerFamiliar(IdPaciente);
+            Paciente = repositorioPaciente.ObtenerPaciente(IdPaciente);
             if (Familiar == null)
             {
-                RedirectToPage("/Pacientes/DetallePaciente");
+                RedirectToPage("/Pacientes/DetallePaciente", new { IdPaciente = Paciente.IdPaciente });
             }
             return Page();
         }
@@ -38,10 +46,9 @@ namespace HospiEnCasa.App.FrontEnd.Pages.Familiares
             {
                 return Page();
             }
-            
-            repositorioFamiliar.Actualizar(Familiar);
-            return RedirectToPage("/Familiares/DetalleFamiliar", new { IdPaciente = Familiar.IdPaciente});
-
+            repositorioPersona.ActualizarFamiliar(Familiar);
+            Familiar = repositorioFamiliar.Actualizar(Familiar);
+            return RedirectToPage("/Familiares/DetalleFamiliar", new { IdPaciente = Paciente.IdPaciente });
         }
     }
 }

@@ -10,7 +10,7 @@ namespace HospiEnCasa.App.Persistencia.AppRepositorios
     {
         Familiar Crear(Familiar familiar);
         FamiliaresPer ObtenerFamiliar(int IdPaciente);
-        void Actualizar(FamiliaresPer familiar);
+        FamiliaresPer Actualizar(FamiliaresPer familiar);
 //        void Eliminar(int id);
         
     }

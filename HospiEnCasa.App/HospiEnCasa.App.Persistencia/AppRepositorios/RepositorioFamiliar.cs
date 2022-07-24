@@ -41,23 +41,34 @@ namespace HospiEnCasa.App.Persistencia.AppRepositorios
             FamiliaresPer familiaresPer = familiares.FirstOrDefault();
             return familiaresPer; 
         }
-        public void Actualizar(FamiliaresPer familiar)
+        public FamiliaresPer Actualizar(FamiliaresPer familiar)
         {
-            var familiarActualizar = _context.Familiars.FirstOrDefault(f => f.IdFamiliar == familiar.IdFamiliar);
-            if (familiarActualizar != null)
-            {
-                _context.Familiars.Attach(familiarActualizar);
-                _context.Entry(familiarActualizar).Property(f => f.Correo).IsModified = true; 
+            var familiarActualizar = (from f in _context.Familiars.Where(p => p.IdFamiliar == familiar.IdFamiliar) select f).FirstOrDefault();
+
+            if(familiarActualizar != null){
+                familiarActualizar.Correo = familiar.Correo;
+                _context.Update(familiarActualizar);
                 _context.SaveChanges();
             }
-            var personaActualizar = _context.Personas.FirstOrDefault(f => f.IdPersona == familiar.IdPersona);
-            if (personaActualizar != null)
-            {
-                _context.Personas.Attach(personaActualizar);
-                _context.Entry(personaActualizar).Property(f => f.Telefono).IsModified = true; 
-                _context.SaveChanges();
-            }
-            
+            var familiarActualizado = from f in _context.Familiars
+                            from p in _context.Personas
+                            where f.IdFamiliar == familiar.IdFamiliar
+                            where f.IdPersona == p.IdPersona
+                            select new FamiliaresPer()
+                            {
+                                IdFamiliar = f.IdFamiliar,
+                                IdPaciente = f.IdPaciente,
+                                IdPersona = p.IdPersona,
+                                Id = p.Id,
+                                Nombres = p.Nombres,
+                                Apellidos = p.Apellidos,
+                                Genero = p.Genero,
+                                Telefono = p.Telefono,
+                                Parentesco = f.Parentesco,
+                                Correo = f.Correo,
+                            };
+            FamiliaresPer familiarActualizadoPer = familiarActualizado.FirstOrDefault();
+            return familiarActualizadoPer;
         }
    }
 }
