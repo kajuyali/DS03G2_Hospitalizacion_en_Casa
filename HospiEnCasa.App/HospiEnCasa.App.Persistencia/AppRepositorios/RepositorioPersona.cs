@@ -33,6 +33,15 @@ namespace HospiEnCasa.App.Persistencia.AppRepositorios
                 _context.SaveChanges();
             }
         }
+        public void ActualizarPaciente(PacientesPer paciente)
+        {
+            var personaEncontrada = (from f in _context.Personas.Where(p => p.IdPersona == paciente.IdPersona) select f).FirstOrDefault();
+            if(personaEncontrada != null){
+                personaEncontrada.Telefono = paciente.Telefono;
+                _context.Update(personaEncontrada);
+                _context.SaveChanges();
+            }
+        }
         public void Eliminar(int id)
         {
             var personaEncontrada = _context.Personas.FirstOrDefault(p => p.IdPersona == id);
@@ -47,3 +56,4 @@ namespace HospiEnCasa.App.Persistencia.AppRepositorios
         }
     }
 }
+
