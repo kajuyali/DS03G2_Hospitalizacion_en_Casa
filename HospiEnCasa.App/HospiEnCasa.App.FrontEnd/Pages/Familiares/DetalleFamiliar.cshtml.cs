@@ -14,6 +14,7 @@ namespace HospiEnCasa.App.FrontEnd.Pages.Familiares
     {
         private readonly ILogger<DetalleFamiliar> _logger;
         private readonly IRepositorioFamiliar repositorioFamiliar;
+        [BindProperty]
         public FamiliaresPer Familiar { get; set; }
 
         public DetalleFamiliar(ILogger<DetalleFamiliar> logger, IRepositorioFamiliar repositorioFamiliar)
@@ -27,7 +28,7 @@ namespace HospiEnCasa.App.FrontEnd.Pages.Familiares
             Familiar = repositorioFamiliar.ObtenerFamiliar(IdPaciente);
             if (Familiar == null)
             {
-                RedirectToPage("/Pacientes/DetallePaciente");
+                RedirectToPage("/Pacientes/DetallePaciente", new { IdPaciente = IdPaciente });
             }
             return Page();
         }

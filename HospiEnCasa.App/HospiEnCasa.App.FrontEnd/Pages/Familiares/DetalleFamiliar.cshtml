@@ -1,4 +1,4 @@
-@page
+@page "{IdPaciente}"
 @model HospiEnCasa.App.FrontEnd.Pages.Familiares.DetalleFamiliar
 @{
     ViewData["Title"] = "Detalle del Familiar Designado";
@@ -17,12 +17,12 @@
                         <p class="text-dark">Familiar Asignado</p>
                         <div class="mt-5">
                         </div>
-                        <div class="mt-3">
+                        <a asp-page="/Familiares/ActualizarFamiliar" asp-route-IdPaciente="@Model.Familiar.IdPaciente" class="mt-3">
                           <button class="btn btn-primary btn-sm btn-round">
                             <i class="fa fa-cog mr-1"></i>
                             Editar Información
                           </button>
-                        </div>
+                        </a>
                     </div>
                 </div>
                 <div class="col-sm-8">
