@@ -21,10 +21,10 @@
                 <div class="col-sm-8">
                     <div class="card-block">
                         <h6 class="m-b-20 p-b-5 b-b-default f-w-600">Información del paciente</h6>
-                        <div class="row">
+                        <div class="row mb-3">
                             <div class="col-sm-6">
                                 <p class="m-b-10 f-w-600">Nombres</p>
-                                 <div class="group">
+                                 <div class="group mb-3">
                                     <input required="" type="text" class="input f-w-600" placeholder="@Model.Paciente.Nombres" asp-for="Paciente.Nombres">
                                     <span class="highlight"></span>
                                     <span class="bar"></span>
@@ -41,11 +41,11 @@
                         </div>
                         <div class="row mt-3">
                           <div class="col-sm-6">
-                              <p class="m-b-10 f-w-600">Documento de Identidad</p>
+                              <p class="m-b-10 f-w-600 mt-3">Documento de Identidad</p>
                               <h6 class="text-muted f-w-400">@Model.Paciente.Id</h6>
                           </div>
                           <div class="col-sm-6">
-                              <p class="m-b-10 f-w-600">Teléfono</p>
+                              <p class="m-b-10 f-w-600 mt-3">Teléfono</p>
                                 <div class="group">
                                     <input required="" type="text" class="input f-w-600" placeholder="@Model.Paciente.Telefono" asp-for="Paciente.Telefono">
                                     <span class="highlight"></span>
@@ -90,9 +90,9 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="row">
+                        <div class="row mt-3">
                           <div class="col-sm-5">
-                              <p class=" mt-3">Latitud</p>
+                              <p class="m-b-10 f-w-600 mt-3">Latitud</p>
                                 <div class="group">
                                     <input required="" type="text" class="input f-w-600" placeholder="@Model.Paciente.Latitud" asp-for="Paciente.Latitud">
                                     <span class="highlight"></span>
@@ -100,7 +100,7 @@
                                 </div>
                           </div>
                           <div class="col-sm-5">
-                              <p class=" mt-3">Longitud</p>
+                              <p class="m-b-10 f-w-600 mt-3">Longitud</p>
                                 <div class="group">
                                     <input required="" type="text" class="input f-w-600" placeholder="@Model.Paciente.Longitud" asp-for="Paciente.Longitud">
                                     <span class="highlight"></span>
