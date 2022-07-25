@@ -14,5 +14,6 @@ namespace HospiEnCasa.App.Persistencia.AppRepositorios
         Medico Actualizar(Medico medico);
         void Eliminar(int id);
         int Contar();
+        IEnumerable<PacientesPer> ObtenerPacientesAsignados(int IdMedico);
     }
 }
