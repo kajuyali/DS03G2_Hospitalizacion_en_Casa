@@ -37,9 +37,9 @@ namespace HospiEnCasa.App.Persistencia.AppRepositorios
         {
             var personaEncontrada = (from f in _context.Personas.Where(p => p.IdPersona == paciente.IdPersona) select f).FirstOrDefault();
             if(personaEncontrada != null){
-                personaEncontrada.Telefono = paciente.Telefono;
                 personaEncontrada.Nombres = paciente.Nombres;
                 personaEncontrada.Apellidos = paciente.Apellidos;
+                personaEncontrada.Telefono = paciente.Telefono;
                 _context.Update(personaEncontrada);
                 _context.SaveChanges();
             }
