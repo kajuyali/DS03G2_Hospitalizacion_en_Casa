@@ -1,0 +1,122 @@
+@page
+@model HospiEnCasa.App.FrontEnd.Pages.Pacientes.ActualizarPaciente
+@{
+    ViewData["Title"] = "Actualizar Paciente";
+}
+
+<form method="post">
+<div>
+    <div class="container mt-5">
+        <div class="card user-card-full">
+            <div class="row m-l-0 m-r-0">
+                <div class="col-sm-4 bg-card user-profile">
+                    <div class="card-block text-center text-white">
+                        <div class="m-b-25">
+                            <img src="~/assets/paciente.png" class="img-radius" alt="User-Profile-Image">
+                        </div>
+                        <h6 class="f-w-600 text-dark">@Model.Paciente.Nombres  @Model.Paciente.Apellidos</h6>
+                        <p class="text-dark">Paciente</p>
+                    </div>
+                </div>
+                <div class="col-sm-8">
+                    <div class="card-block">
+                        <h6 class="m-b-20 p-b-5 b-b-default f-w-600">Información del paciente</h6>
+                        <div class="row mb-3">
+                            <div class="col-sm-6">
+                                <p class="m-b-10 f-w-600">Nombres</p>
+                                 <div class="group mb-3">
+                                    <input required="" type="text" class="input f-w-600" placeholder="@Model.Paciente.Nombres" asp-for="Paciente.Nombres">
+                                    <span class="highlight"></span>
+                                    <span class="bar"></span>
+                                </div>
+                            </div>
+                            <div class="col-sm-6">
+                                <p class="m-b-10 f-w-600">Apellidos</p>
+                                 <div class="group">
+                                    <input required="" type="text" class="input f-w-600" placeholder="@Model.Paciente.Apellidos" asp-for="Paciente.Apellidos">
+                                    <span class="highlight"></span>
+                                    <span class="bar"></span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row mt-3">
+                          <div class="col-sm-6">
+                              <p class="m-b-10 f-w-600 mt-3">Documento de Identidad</p>
+                              <h6 class="text-muted f-w-400">@Model.Paciente.Id</h6>
+                          </div>
+                          <div class="col-sm-6">
+                              <p class="m-b-10 f-w-600 mt-3">Teléfono</p>
+                                <div class="group">
+                                    <input required="" type="text" class="input f-w-600" placeholder="@Model.Paciente.Telefono" asp-for="Paciente.Telefono">
+                                    <span class="highlight"></span>
+                                    <span class="bar"></span>
+                                </div>
+                          </div>
+                            <div class="col-sm-6 mt-2">
+                                <p class="m-b-10 f-w-600">Familiar Asignado</p>
+                                @if (Model.FamiliarAsignado != null)
+                                {
+                                  <a class="text-active f-w-400" asp-page="/Familiares/DetalleFamiliar" asp-route-IdPaciente="@Model.FamiliarAsignado.IdPaciente">@Model.FamiliarAsignado.Nombres @Model.FamiliarAsignado.Apellidos</a>
+                                } else {
+                                  <h6 class="text-muted f-w-400">Sin asignar</h6>
+                                }
+                            </div>
+                            <div class="col-sm-6 mt-2">
+                                <p class="m-b-10 f-w-600">Medico Asignado</p>
+                                @if (Model.MedicoAsignado != null)
+                                {
+                                  <a class="text-active f-w-400" asp-page="/Medicos/DetalleMedico" asp-route-IdMedico="@Model.MedicoAsignado.IdMedico">@Model.MedicoAsignado.Nombres @Model.MedicoAsignado.Apellidos</a>
+                                } else {
+                                  <h6 class="text-muted f-w-400">Sin asignar</h6>
+                                }
+                            </div>
+                      </div>
+                        <h6 class="m-b-20 m-t-40 p-b-5 b-b-default f-w-600">Ubicación</h6>
+                        <div class="row">
+                            <div class="col-sm-5">
+                                <p class="m-b-10 f-w-600">Dirección</p>
+                                <div class="group">
+                                    <input required="" type="text" class="input f-w-600" placeholder="@Model.Paciente.Direccion" asp-for="Paciente.Direccion">
+                                    <span class="highlight"></span>
+                                    <span class="bar"></span>
+                                </div>
+                            </div>
+                            <div class="col-sm-5">
+                                <p class="m-b-10 f-w-600">Ciudad</p>
+                                <div class="group">
+                                    <input required="" type="text" class="input f-w-600" placeholder="@Model.Paciente.Ciudad" asp-for="Paciente.Ciudad">
+                                    <span class="highlight"></span>
+                                    <span class="bar"></span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row mt-3">
+                          <div class="col-sm-5">
+                              <p class="m-b-10 f-w-600 mt-3">Latitud</p>
+                                <div class="group">
+                                    <input required="" type="text" class="input f-w-600" placeholder="@Model.Paciente.Latitud" asp-for="Paciente.Latitud">
+                                    <span class="highlight"></span>
+                                    <span class="bar"></span>
+                                </div>
+                          </div>
+                          <div class="col-sm-5">
+                              <p class="m-b-10 f-w-600 mt-3">Longitud</p>
+                                <div class="group">
+                                    <input required="" type="text" class="input f-w-600" placeholder="@Model.Paciente.Longitud" asp-for="Paciente.Longitud">
+                                    <span class="highlight"></span>
+                                    <span class="bar"></span>
+                                </div>
+                          </div>
+                      </div>
+                    <input type="hidden" asp-for="Paciente.IdPaciente" value="@Model.Paciente.IdPaciente"/>
+                    <input type="hidden" asp-for="Paciente.IdPersona" value="@Model.Paciente.IdPersona"/>
+                    <div class="d-flex justify-content-center">
+                        <button type="submit" class="btn btn-primary mt-5">Guardar Cambios</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</form>
+

@@ -96,5 +96,42 @@ namespace HospiEnCasa.App.Persistencia.AppRepositorios
             MedicosPer Medico = asignado.FirstOrDefault();
             return Medico;
         }
+     
+        public PacientesPer Actualizar(PacientesPer paciente)
+        {
+            var pacienteActualizar = (from f in _context.Pacientes.Where(p => p.IdPac == paciente.IdPaciente) select f).FirstOrDefault();
+
+            if(pacienteActualizar != null){
+                pacienteActualizar.Direccion = paciente.Direccion;
+                pacienteActualizar.Ciudad = paciente.Ciudad;
+                pacienteActualizar.Latitud = paciente.Latitud;
+                pacienteActualizar.Longitud = paciente.Longitud;
+                _context.Update(pacienteActualizar);
+                _context.SaveChanges();
+            }
+            var pacienteActualizado = from f in _context.Pacientes
+                            from p in _context.Personas
+                            where f.IdPac == paciente.IdPaciente
+                            where f.IdPersona == p.IdPersona
+                            select new PacientesPer()
+                            {
+                                IdPaciente = f.IdPac,
+                                IdPersona = p.IdPersona,
+                                Id = p.Id,
+                                Nombres = p.Nombres,
+                                Apellidos = p.Apellidos,
+                                Genero = p.Genero,
+                                Telefono = p.Telefono,
+                                FechaNacimiento = f.FechaNacimiento,
+                                Ciudad = f.Ciudad,
+                                Direccion = f.Direccion,
+                                Latitud = f.Latitud,
+                                Longitud = f.Longitud,
+                            };
+            PacientesPer pacienteActualizadoPer = pacienteActualizado.FirstOrDefault();
+            return pacienteActualizadoPer;
+        }
+        
     }
 }
+

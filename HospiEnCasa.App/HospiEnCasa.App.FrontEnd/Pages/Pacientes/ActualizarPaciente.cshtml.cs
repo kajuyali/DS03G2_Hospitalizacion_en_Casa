@@ -10,35 +10,47 @@ using HospiEnCasa.App.Persistencia.Models;
 
 namespace HospiEnCasa.App.FrontEnd.Pages.Pacientes
 {
-    public class DetallePaciente : PageModel
+    public class ActualizarPaciente : PageModel
     {
-        private readonly ILogger<DetallePaciente> _logger;
+        private readonly ILogger<ActualizarPaciente> _logger;
         private readonly IRepositorioPaciente repositorioPaciente;
+        private readonly IRepositorioPersona repositorioPersona;
         private readonly IRepositorioFamiliar repositorioFamiliar;
-        private readonly IRepositorioSigno repositorioSigno;
         [BindProperty]
         public PacientesPer Paciente { get; set; }
         public FamiliaresPer FamiliarAsignado { get; set; }
-        public ListaSignosPaciente SignoVitales { get; set; }
         public MedicosPer MedicoAsignado { get; set; }
 
-        public DetallePaciente(ILogger<DetallePaciente> logger, IRepositorioPaciente repositorioPaciente, IRepositorioFamiliar repositorioFamiliar,IRepositorioSigno repositorioSigno)
+        public ActualizarPaciente(ILogger<ActualizarPaciente> logger, IRepositorioPaciente repositorioPaciente,  IRepositorioPersona repositorioPersona,  IRepositorioFamiliar repositorioFamiliar)
         {
             _logger = logger;
             this.repositorioPaciente = repositorioPaciente;
             this.repositorioFamiliar = repositorioFamiliar;
-            this.repositorioSigno = repositorioSigno;
+            this.repositorioPersona = repositorioPersona;
         }
         public IActionResult OnGet(int IdPaciente)
         {
             Paciente = repositorioPaciente.ObtenerPaciente(IdPaciente);
-            SignoVitales = repositorioSigno.ObtenerSignosPaciente(IdPaciente);
             FamiliarAsignado = repositorioFamiliar.ObtenerFamiliar(IdPaciente);
             MedicoAsignado = repositorioPaciente.ObtenerMedicoAsignado(IdPaciente);
             if (Paciente == null) {
-                RedirectToPage("/Pacientes/DetallePaciente", new { IdPaciente = IdPaciente });
+                return RedirectToPage("/Pacientes/ListaPacientes");
             }
             return Page();
-        }   
+        } 
+         public IActionResult OnPost()
+        {
+            if (!ModelState.IsValid)
+            {
+                return Page();
+            }
+            
+            repositorioPersona.ActualizarPaciente(Paciente);
+            Paciente = repositorioPaciente.Actualizar(Paciente);
+            return RedirectToPage("/Pacientes/DetallePaciente", new { IdPaciente = Paciente.IdPaciente });
+
+        }  
     }
 }
+
+
