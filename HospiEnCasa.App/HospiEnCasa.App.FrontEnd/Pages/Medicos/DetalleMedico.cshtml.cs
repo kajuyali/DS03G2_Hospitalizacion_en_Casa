@@ -15,6 +15,8 @@ namespace HospiEnCasa.App.FrontEnd.Pages.Medicos
         private readonly ILogger<DetalleMedico> _logger;
         private readonly IRepositorioMedico repositorioMedico;
         public MedicosPer Medico { get; set; }
+        public IEnumerable<PacientesPer> Pacientes { get; set; }
+
 
         public DetalleMedico(ILogger<DetalleMedico> logger, IRepositorioMedico repositorioMedico)
         {
@@ -25,6 +27,8 @@ namespace HospiEnCasa.App.FrontEnd.Pages.Medicos
         public IActionResult OnGet(int IdMedico)
         {
             Medico = repositorioMedico.ObtenerMedico(IdMedico);
+            Pacientes = repositorioMedico.ObtenerPacientesAsignados(IdMedico);
+
             if (Medico == null)
             {
                 RedirectToPage("/Medicos/ListaMedicos");
