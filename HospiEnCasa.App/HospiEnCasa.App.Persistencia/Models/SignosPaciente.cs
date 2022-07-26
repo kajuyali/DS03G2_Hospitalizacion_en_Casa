@@ -8,6 +8,7 @@ namespace HospiEnCasa.App.Persistencia.Models
     public partial class SignosPaciente
     {
         public int IdSignoPaciente { get; set; }
+        public DateTime Fecha { get; set; }
         public double Valor { get; set; }
         public int IdSigno { get; set; }
         public int IdPaciente { get; set; }
