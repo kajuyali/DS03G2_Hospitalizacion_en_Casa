@@ -15,6 +15,7 @@ namespace HospiEnCasa.App.Persistencia.Models
         public int IdHistoria { get; set; }
         public string Diagnostico { get; set; }
         public int IdPaciente { get; set; }
+        public DateTime Fecha { get; set; }
 
         public virtual Paciente IdPacienteNavigation { get; set; }
         public virtual ICollection<Sugerencia> Sugerencia { get; set; }

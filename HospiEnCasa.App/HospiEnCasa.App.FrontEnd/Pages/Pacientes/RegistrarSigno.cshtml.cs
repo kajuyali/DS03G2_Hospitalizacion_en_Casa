@@ -40,6 +40,7 @@ namespace HospiEnCasa.App.FrontEnd.Pages.Pacientes
         {
             if (ModelState.IsValid)
             {
+                SignoPaciente.Fecha = DateTime.Now;
                 SignoPaciente.IdPaciente = Paciente.IdPaciente;
                 SignoPaciente.IdSigno = SignoVital.IdSigno;
                 repositorioSigno.CrearSignoPaciente(SignoPaciente);

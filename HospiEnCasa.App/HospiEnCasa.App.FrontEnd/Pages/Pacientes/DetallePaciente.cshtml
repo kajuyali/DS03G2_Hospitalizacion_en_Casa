@@ -100,7 +100,7 @@
             </div>
         </div>
       </div>
-      <!--Signos vitales del paciente-->
+<!--Signos vitales del paciente-->
       <h2 class="divider line one-line">Signos Vitales</h2>
 
       <div class="container w-75 d-flex justify-content-around mb-5 mt-3">
@@ -256,5 +256,60 @@
         </div>
         </a>
       </div>
-
+<!--TABLA DE REGISTRO COMPLETO de Signos vitales del paciente-->
+    <div class="container bg-white w-auto p-3 m-5">
+        <div>
+            <h5 class="f-w-1500 font-weight-bold text-primary text-center divider line one-line">
+                REGISTRO DE SIGNOS VITALES</h5>
+        </div>
+        <table
+            id="table"
+            class="table table-sm table-striped text-center table-bordered h-75"
+            style="width: 100%">
+            <thead class="text-center">
+                <tr class="table-success">
+                    <th>Fecha</th>
+                    <th>Tipo de Signo</th>
+                    <th>Valor</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var registroSignos in Model.RegistroSignosPaciente)
+                {
+                    <tr>
+                        <td>@registroSignos.Fecha</td>
+                        <td>@registroSignos.DescripSignoVital</td>
+                        <td>@registroSignos.Valor</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+<!--TABLA DE REGISTRO COMPLETO de Historia del paciente-->
+    <div class="container bg-white w-auto p-3 m-5">
+        <div>
+            <h5 class="f-w-1500 font-weight-bold text-primary text-center divider line one-line">
+                HISTORIAL CLINICO</h5>
+        </div>
+        <table
+            id="table"
+            class="table table-sm table-striped text-center table-bordered h-75"
+            style="width: 100%">
+            <thead class="text-center">
+                <tr class="table-success">
+                    <th>Fecha</th>
+                    <th>Diagnóstico</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var registroHistoria in Model.RegistroHistoriaPaciente)
+                {
+                    <tr>
+                        <td>@registroHistoria.Fecha</td>
+                        <td>@registroHistoria.Diagnostico</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
 </div>

@@ -11,5 +11,6 @@ namespace HospiEnCasa.App.Persistencia.AppRepositorios
         SignosPaciente CrearSignoPaciente(SignosPaciente signoPaciente);
         SignosVitale ObtenerSigno(int idSigno);
         ListaSignosPaciente ObtenerSignosPaciente(int idPaciente);
+        IEnumerable<SignosList> ObtenerHistorialSignosPaciente(int IdPaciente);
     }
 }
