@@ -16,18 +16,23 @@ namespace HospiEnCasa.App.FrontEnd.Pages.Pacientes
         private readonly IRepositorioPaciente repositorioPaciente;
         private readonly IRepositorioFamiliar repositorioFamiliar;
         private readonly IRepositorioSigno repositorioSigno;
-        [BindProperty]
+        private readonly IRepositorioHistorium repositorioHistorium;
         public PacientesPer Paciente { get; set; }
         public FamiliaresPer FamiliarAsignado { get; set; }
-        public ListaSignosPaciente SignoVitales { get; set; }
-        public MedicosPer MedicoAsignado { get; set; }
+        public ListaSignosPaciente SignoVitales { get; set; } // Ultimo signo vital paciente
 
-        public DetallePaciente(ILogger<DetallePaciente> logger, IRepositorioPaciente repositorioPaciente, IRepositorioFamiliar repositorioFamiliar,IRepositorioSigno repositorioSigno)
+        public MedicosPer MedicoAsignado { get; set; }
+        public IEnumerable<SignosList> RegistroSignosPaciente { get; set; } // Registro Completo Signos Vitales Paciente
+        public IEnumerable<Historium> RegistroHistoriaPaciente { get; set; } // Registro Completo Historia Médica Paciente
+
+
+        public DetallePaciente(ILogger<DetallePaciente> logger, IRepositorioPaciente repositorioPaciente, IRepositorioFamiliar repositorioFamiliar, IRepositorioSigno repositorioSigno, IRepositorioHistorium repositorioHistorium)
         {
             _logger = logger;
             this.repositorioPaciente = repositorioPaciente;
             this.repositorioFamiliar = repositorioFamiliar;
             this.repositorioSigno = repositorioSigno;
+            this.repositorioHistorium = repositorioHistorium;
         }
         public IActionResult OnGet(int IdPaciente)
         {
@@ -35,6 +40,8 @@ namespace HospiEnCasa.App.FrontEnd.Pages.Pacientes
             SignoVitales = repositorioSigno.ObtenerSignosPaciente(IdPaciente);
             FamiliarAsignado = repositorioFamiliar.ObtenerFamiliar(IdPaciente);
             MedicoAsignado = repositorioPaciente.ObtenerMedicoAsignado(IdPaciente);
+            RegistroSignosPaciente = repositorioSigno.ObtenerHistorialSignosPaciente(IdPaciente);
+            RegistroHistoriaPaciente = repositorioHistorium.ObtenerHistoriaPaciente(IdPaciente);
             if (Paciente == null) {
                 RedirectToPage("/Pacientes/DetallePaciente", new { IdPaciente = IdPaciente });
             }

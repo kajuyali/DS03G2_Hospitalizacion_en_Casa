@@ -34,21 +34,21 @@ namespace HospiEnCasa.App.Persistencia.AppRepositorios
                             where p.IdSigno == 1
                             select p.Valor;
             var freCardiaca = from p in _context.SignosPacientes
-                              where p.IdPaciente == idPaciente
-                              where p.IdSigno == 3
-                              select p.Valor;
+                                where p.IdPaciente == idPaciente
+                                where p.IdSigno == 3
+                                select p.Valor;
             var freRespiratoria = from p in _context.SignosPacientes
-                                  where p.IdPaciente == idPaciente
-                                  where p.IdSigno == 2
-                                  select p.Valor;
+                                where p.IdPaciente == idPaciente
+                                where p.IdSigno == 2
+                                select p.Valor;
             var temperatura = from p in _context.SignosPacientes
                                 where p.IdPaciente == idPaciente
                                 where p.IdSigno == 4
                                 select p.Valor;
             var presion = from p in _context.SignosPacientes
-                          where p.IdPaciente == idPaciente
-                          where p.IdSigno == 5
-                          select p.Valor;
+                                where p.IdPaciente == idPaciente
+                                where p.IdSigno == 5
+                                select p.Valor;
             var signos = new ListaSignosPaciente()
             {
                 IdPaciente = idPaciente,
@@ -59,6 +59,22 @@ namespace HospiEnCasa.App.Persistencia.AppRepositorios
                 Presion = presion.FirstOrDefault()
             };
             return signos;
+        }
+        public IEnumerable<SignosList> ObtenerHistorialSignosPaciente(int IdPaciente)
+        {
+            var signosPaciente = from p1 in _context.SignosPacientes
+                            from p2 in _context.SignosVitales
+                            where p1.IdPaciente == IdPaciente
+                            where p1.IdSigno == p2.IdSigno
+                            select new SignosList()
+                            {
+                                IdSigno = p1.IdSigno,
+                                Fecha = p1.Fecha,
+                                DescripSignoVital = p2.DescripSignoVital,
+                                Valor = p1.Valor,
+                            };
+            IEnumerable<SignosList> Signos = signosPaciente;
+            return Signos;
         }
     }
 }

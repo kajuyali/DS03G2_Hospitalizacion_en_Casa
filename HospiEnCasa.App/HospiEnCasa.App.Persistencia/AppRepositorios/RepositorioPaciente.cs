@@ -96,7 +96,28 @@ namespace HospiEnCasa.App.Persistencia.AppRepositorios
             MedicosPer Medico = asignado.FirstOrDefault();
             return Medico;
         }
-     
+/*        public PacientesPer ObtenerHistoriasClinicas(int IdPaciente)
+        {
+            var asignado = from p1 in _context.Historia
+                            from p2 in _context.Pacientes
+                            from p3 in _context.Personas
+                            where p1.IdPaciente == IdPaciente
+                            where p2.IdPac == p2.IdPaciente
+                            where p1.IdPersona == p3.IdPersona
+                            select new PacientesPer()
+                            {
+                                IdPaciente = p1.IdPersona,
+                                Id = p3.Id,
+                                Nombres = p3.Nombres,
+                                Apellidos = p3.Apellidos,
+                                Genero = p3.Genero,
+                                Telefono = p3.Telefono,
+                                Especialidad = p1.Diagnostico,
+                                Registro = p1.Registro
+                            };
+            MedicosPer Medico = asignado.FirstOrDefault();
+            return Medico;
+        }  */
         public PacientesPer Actualizar(PacientesPer paciente)
         {
             var pacienteActualizar = (from f in _context.Pacientes.Where(p => p.IdPac == paciente.IdPaciente) select f).FirstOrDefault();
@@ -131,7 +152,6 @@ namespace HospiEnCasa.App.Persistencia.AppRepositorios
             PacientesPer pacienteActualizadoPer = pacienteActualizado.FirstOrDefault();
             return pacienteActualizadoPer;
         }
-        
     }
 }
 

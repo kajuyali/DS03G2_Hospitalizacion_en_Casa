@@ -158,6 +158,11 @@ namespace HospiEnCasa.App.Persistencia.Models
                     .HasForeignKey(d => d.IdPaciente)
                     .OnDelete(DeleteBehavior.ClientSetNull)
                     .HasConstraintName("FK__historia__Id_Pac__2739D489");
+
+                entity.Property(e => e.Fecha)
+                    .IsRequired()
+                    .HasColumnType("date")
+                    .HasColumnName("Fecha");
             });
 
             modelBuilder.Entity<Medico>(entity =>
@@ -279,6 +284,11 @@ namespace HospiEnCasa.App.Persistencia.Models
                 entity.Property(e => e.IdPaciente).HasColumnName("Id_Paciente");
 
                 entity.Property(e => e.IdSigno).HasColumnName("Id_Signo");
+
+                entity.Property(e => e.Fecha)
+                    .IsRequired()
+                    .HasColumnType("date")
+                    .HasColumnName("Fecha");
 
                 entity.HasOne(d => d.IdPacienteNavigation)
                     .WithMany(p => p.SignosPacientes)
