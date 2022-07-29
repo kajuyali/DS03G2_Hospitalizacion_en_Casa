@@ -12,7 +12,7 @@ namespace HospiEnCasa.App.Persistencia.Models
         public double Valor { get; set; }
         public int IdSigno { get; set; }
         public int IdPaciente { get; set; }
-        public DateTime Fecha { get; set; }
+
 
         public virtual Paciente IdPacienteNavigation { get; set; }
         public virtual SignosVitale IdSignoNavigation { get; set; }

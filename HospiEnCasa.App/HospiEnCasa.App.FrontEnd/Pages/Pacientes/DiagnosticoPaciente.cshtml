@@ -1,0 +1,22 @@
+@page
+@model HospiEnCasa.App.FrontEnd.Pages.Pacientes.DiagnosticoPaciente
+@{
+    ViewData["Title"] = "Ingresar diagnóstico";
+}
+
+<div class="card p-2 m-5">
+    <div class="card-body">
+    <div class="card-title text-center">
+        <p class="form-title font-weight-bold">Registrar un diagnóstico</p>
+    </div>
+        <form method="post">
+            <div class="form-group">
+                <label for="valor">Escribe el diagnóstico</label>
+                <input type="text" class="form-control" asp-for="Historia.Diagnostico" placeholder="Ingresa el diagnóstico">
+            </div>
+            <div>
+                <button type="submit" class="btn btn-primary">Guardar diagnóstico</button>
+            </div>
+        </form>
+    </div>
+</div>
