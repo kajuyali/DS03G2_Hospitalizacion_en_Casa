@@ -10,5 +10,6 @@ namespace HospiEnCasa.App.Persistencia.AppRepositorios
     {
 //      HistoriaPaciente CrearHistoriaPaciente(HistoriaPaciente historiaPaciente);
         IEnumerable<Historium> ObtenerHistoriaPaciente(int IdPaciente);
+        Historium CrearDiagnostico(Historium historia);
     }
 }

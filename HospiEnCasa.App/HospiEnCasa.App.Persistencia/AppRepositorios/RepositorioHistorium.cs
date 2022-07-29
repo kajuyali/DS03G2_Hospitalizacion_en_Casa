@@ -21,5 +21,11 @@ namespace HospiEnCasa.App.Persistencia.AppRepositorios
             IEnumerable<Historium> Historia = historiaPaciente;
             return Historia;
         }
+        public Historium CrearDiagnostico(Historium historia)
+        {
+            _context.Historia.Add(historia);
+            _context.SaveChanges();
+            return historia;
+        }
     }
 }
