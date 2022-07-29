@@ -33,7 +33,7 @@ namespace HospiEnCasa.App.Persistencia.Models
         {
             if (!optionsBuilder.IsConfigured)
             {
-                optionsBuilder.UseSqlServer((Configuration.GetConnectionString("Database")));
+                optionsBuilder.UseSqlServer(Configuration.GetConnectionString("Database"));
             }
         }
 
@@ -273,11 +273,13 @@ namespace HospiEnCasa.App.Persistencia.Models
             modelBuilder.Entity<SignosPaciente>(entity =>
             {
                 entity.HasKey(e => e.IdSignoPaciente)
-                    .HasName("PK__signos_p__690ACC1915241646");
+                    .HasName("PK__signos_p__690ACC1929F3901E");
 
                 entity.ToTable("signos_pacientes");
 
                 entity.Property(e => e.IdSignoPaciente).HasColumnName("Id_SignoPaciente");
+
+                entity.Property(e => e.Fecha).HasColumnType("datetime");
 
                 entity.Property(e => e.IdPaciente).HasColumnName("Id_Paciente");
 
@@ -292,13 +294,13 @@ namespace HospiEnCasa.App.Persistencia.Models
                     .WithMany(p => p.SignosPacientes)
                     .HasForeignKey(d => d.IdPaciente)
                     .OnDelete(DeleteBehavior.ClientSetNull)
-                    .HasConstraintName("FK__signos_pa__Id_Pa__30C33EC3");
+                    .HasConstraintName("FK__signos_pa__Id_Pa__395884C4");
 
                 entity.HasOne(d => d.IdSignoNavigation)
                     .WithMany(p => p.SignosPacientes)
                     .HasForeignKey(d => d.IdSigno)
                     .OnDelete(DeleteBehavior.ClientSetNull)
-                    .HasConstraintName("FK__signos_pa__Id_Si__2FCF1A8A");
+                    .HasConstraintName("FK__signos_pa__Id_Si__3864608B");
             });
 
             modelBuilder.Entity<SignosVitale>(entity =>
@@ -324,7 +326,7 @@ namespace HospiEnCasa.App.Persistencia.Models
             modelBuilder.Entity<Sugerencia>(entity =>
             {
                 entity.HasKey(e => e.IdSugerencia)
-                    .HasName("PK__sugerenc__6E863219E137681E");
+                    .HasName("PK__sugerenc__6E863219567B6325");
 
                 entity.ToTable("sugerencias");
 
@@ -335,6 +337,8 @@ namespace HospiEnCasa.App.Persistencia.Models
                     .HasMaxLength(150)
                     .IsUnicode(false);
 
+                entity.Property(e => e.Fecha).HasColumnType("datetime");
+
                 entity.Property(e => e.IdHistoria).HasColumnName("Id_Historia");
 
                 entity.Property(e => e.IdMedico).HasColumnName("Id_Medico");
@@ -343,13 +347,13 @@ namespace HospiEnCasa.App.Persistencia.Models
                     .WithMany(p => p.Sugerencia)
                     .HasForeignKey(d => d.IdHistoria)
                     .OnDelete(DeleteBehavior.ClientSetNull)
-                    .HasConstraintName("FK__sugerenci__Id_Hi__2A164134");
+                    .HasConstraintName("FK__sugerenci__Id_Hi__3C34F16F");
 
                 entity.HasOne(d => d.IdMedicoNavigation)
                     .WithMany(p => p.Sugerencia)
                     .HasForeignKey(d => d.IdMedico)
                     .OnDelete(DeleteBehavior.ClientSetNull)
-                    .HasConstraintName("FK__sugerenci__Id_Me__2B0A656D");
+                    .HasConstraintName("FK__sugerenci__Id_Me__3D2915A8");
             });
 
             OnModelCreatingPartial(modelBuilder);

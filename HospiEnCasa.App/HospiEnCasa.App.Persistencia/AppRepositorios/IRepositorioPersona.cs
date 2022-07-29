@@ -10,7 +10,8 @@ namespace HospiEnCasa.App.Persistencia.AppRepositorios
     {
         IEnumerable<Persona> ObtenerTodos();
         Persona Crear(Persona persona);
-        Persona Actualizar(Persona persona);
+        void ActualizarFamiliar(FamiliaresPer familiar);
+        void ActualizarPaciente(PacientesPer paciente);
         void Eliminar(int id);
         Persona ObtenerPorId(int id);
     }

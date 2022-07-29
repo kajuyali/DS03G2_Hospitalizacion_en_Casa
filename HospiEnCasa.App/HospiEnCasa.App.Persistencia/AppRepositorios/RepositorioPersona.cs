@@ -24,19 +24,25 @@ namespace HospiEnCasa.App.Persistencia.AppRepositorios
             _context.SaveChanges();
             return persona;
         }
-        public Persona Actualizar(Persona persona)
+        public void ActualizarFamiliar(FamiliaresPer familiar)
         {
-            var personaEncontrada = _context.Personas.FirstOrDefault(p => p.IdPersona == persona.IdPersona);
+            var personaEncontrada = (from f in _context.Personas.Where(p => p.IdPersona == familiar.IdPersona) select f).FirstOrDefault();
             if(personaEncontrada != null){
-                personaEncontrada.Id = persona.Id;
-                persona.Nombres = personaEncontrada.Nombres;
-                persona.Apellidos = personaEncontrada.Apellidos;
-                persona.Telefono = personaEncontrada.Telefono;
-                persona.Genero = personaEncontrada.Genero;
+                personaEncontrada.Telefono = familiar.Telefono;
+                _context.Update(personaEncontrada);
+                _context.SaveChanges();
             }
-            _context.Personas.Update(personaEncontrada);
-            _context.SaveChanges();
-            return persona;
+        }
+        public void ActualizarPaciente(PacientesPer paciente)
+        {
+            var personaEncontrada = (from f in _context.Personas.Where(p => p.IdPersona == paciente.IdPersona) select f).FirstOrDefault();
+            if(personaEncontrada != null){
+                personaEncontrada.Nombres = paciente.Nombres;
+                personaEncontrada.Apellidos = paciente.Apellidos;
+                personaEncontrada.Telefono = paciente.Telefono;
+                _context.Update(personaEncontrada);
+                _context.SaveChanges();
+            }
         }
         public void Eliminar(int id)
         {
@@ -52,3 +58,4 @@ namespace HospiEnCasa.App.Persistencia.AppRepositorios
         }
     }
 }
+
