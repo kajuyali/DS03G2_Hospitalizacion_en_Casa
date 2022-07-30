@@ -13,6 +13,7 @@ using Microsoft.AspNetCore.Authorization;
 
 namespace HospiEnCasa.App.FrontEnd.Pages.VistaPacientes
 {
+    [Authorize(Roles = "Paciente")]
     public class Diagnostico : PageModel
     {
         private readonly ILogger<Diagnostico> _logger;

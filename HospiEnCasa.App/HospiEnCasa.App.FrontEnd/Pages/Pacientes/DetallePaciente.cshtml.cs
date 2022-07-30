@@ -12,6 +12,7 @@ using Microsoft.AspNetCore.Authorization;
 
 namespace HospiEnCasa.App.FrontEnd.Pages.Pacientes
 {
+    [Authorize(Roles = "Medico")]
     public class DetallePaciente : PageModel
     {
         private readonly ILogger<DetallePaciente> _logger;
