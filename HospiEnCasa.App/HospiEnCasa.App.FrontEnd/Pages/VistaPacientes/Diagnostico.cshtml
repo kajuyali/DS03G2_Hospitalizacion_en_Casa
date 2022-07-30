@@ -1,0 +1,52 @@
+@page
+@model HospiEnCasa.App.FrontEnd.Pages.VistaPacientes.Diagnostico
+@{
+    ViewData["Title"] = "Diagnostico";
+    var contador = 0;
+}
+
+<!--TABLA DE REGISTRO COMPLETO de Historia del paciente-->
+    <div class="container bg-white w-auto p-3 m-5">
+        <div>
+            <h5 class="f-w-1500 font-weight-bold text-primary text-center divider line one-line">
+                HISTORIAL CLINICO</h5>
+        </div>
+        <table
+            id="table"
+            class="table table-sm table-striped text-center table-bordered h-75"
+            style="width: 100%">
+            <thead class="text-center">
+                <tr class="table-success">
+                    <th>Fecha</th>
+                    <th>Diagnóstico</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var registroHistoria in Model.RegistroHistoriaPaciente)
+                {
+                    <tr>
+                        <td>@registroHistoria.Fecha</td>
+                        <td>@registroHistoria.Diagnostico</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+
+    <!-- Lista de sugerencias -->
+
+    <div class="container d-flex justify-content-center flex-column align-items-center">
+            @if (Model.Sugerencias != null)
+            {
+                @foreach (var sugerencia in Model.Sugerencias)
+                {
+                    <div class="lista mt-3">
+                        <h3 class="lista__title">Sugerencia #@contador @{contador++;}</h3>
+                        <p class="lista__content">@sugerencia.Descripcion</p>
+                        <div class="lista__date">
+                            <p>@sugerencia.Fecha</p>
+                        </div>
+                    </div>
+                }
+            }
+    </div>

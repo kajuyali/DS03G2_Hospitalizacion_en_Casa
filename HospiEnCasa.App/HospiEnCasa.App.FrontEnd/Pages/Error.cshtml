@@ -2,25 +2,46 @@
 @model ErrorModel
 @{
     ViewData["Title"] = "Error";
+    Layout = "";
 }
 
-<h1 class="text-danger">Error.</h1>
-<h2 class="text-danger">An error occurred while processing your request.</h2>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>@ViewData["Title"] - HospiEnCasa</title>
+  <link rel="stylesheet" href="~/css/site.css" />
+</head>
+<body>
+  <div class="container d-flex justify-content-center bg-white rounded w-100">
+  <div class="center">
+  <div class="error">
+    <div class="number">4</div>
+    <div class="illustration">
+      <div class="circle"></div>
+      <div class="clip">
+        <div class="paper">
+          <div class="face">
+            <div class="eyes">
+              <div class="eye eye-left"></div>
+              <div class="eye eye-right"></div>
+            </div>
+            <div class="rosyCheeks rosyCheeks-left"></div>
+            <div class="rosyCheeks rosyCheeks-right"></div>
+            <div class="mouth"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="number">4</div>
+  </div>
 
-@if (Model.ShowRequestId)
-{
-    <p>
-        <strong>Request ID:</strong> <code>@Model.RequestId</code>
-    </p>
-}
+  <div class="text">Oops. Parece ser que la pagina que estas buscando no existe o no tienes acceso, ¿Por que no intentas vovler al inicio?</div>
+  <a class="button-error" asp-page="/Index">Inicio</a>
+</div>
 
-<h3>Development Mode</h3>
-<p>
-    Swapping to the <strong>Development</strong> environment displays detailed information about the error that occurred.
-</p>
-<p>
-    <strong>The Development environment shouldn't be enabled for deployed applications.</strong>
-    It can result in displaying sensitive information from exceptions to end users.
-    For local debugging, enable the <strong>Development</strong> environment by setting the <strong>ASPNETCORE_ENVIRONMENT</strong> environment variable to <strong>Development</strong>
-    and restarting the app.
-</p>
+</div>
+</body>
+</html>

@@ -1,4 +1,7 @@
-﻿<!DOCTYPE html>
+﻿@using Microsoft.AspNetCore.Identity;
+@inject SignInManager<IdentityUser> signInManager;
+
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="utf-8" />
@@ -13,12 +16,15 @@
 <body>
       <!-- Inicio del menu vertical -->
       <div class="vertical-nav bg-white" id="sidebar">
-        <div class="py-4 px-3 mb-4 bg-light">
+        @{
+          if (signInManager.IsSignedIn(User) & User.IsInRole("Medico"))
+          {
+            <div class="py-4 px-3 mb-4 bg-light">
           <div class="media d-flex align-items-center">
-            <img loading="lazy" src="~/assets/teamwork.png" alt="icono" width="80" height="80" class="mr-3 rounded-circle img-thumbnail shadow-sm">
+            <img loading="lazy" src="~/assets/doctor.png" alt="icono" width="80" height="80" class="mr-3 rounded-circle img-thumbnail shadow-sm">
             <div class="media-body">
-              <h4 class="m-0">Algun Nombre</h4>
-              <p class="font-weight-normal text-muted mb-0">Auxiliar</p>
+              <h4 class="m-0">Hospi En Casa</h4>
+              <p class="font-weight-normal text-muted mb-0">Medico</p>
             </div>
           </div>
         </div>
@@ -32,6 +38,12 @@
                       Inicio
             </a>
           </li>
+                    <li class="nav-item">
+            <a asp-page="/VistaMedicos/MiInformacion" class="nav-link text-dark">
+                      <i class="fa fa-users mr-3 text-primary"></i>
+                      <span>Mi información</span>
+            </a>
+          </li>
           <li class="nav-item">
             <div class="nav-link text-dark" data-toggle="collapse" data-target="#pacienteContent" aria-controls="pacienteContent" aria-expanded="false" aria-label="Toggle navigation">
                       <i class="fa fa-users mr-3 text-primary"></i>
@@ -40,12 +52,6 @@
             <div class="collapse" id="pacienteContent">
               <div class="bg-light p-2">
                 <ul class="nav">
-                  <a asp-page="/Pacientes/NuevoPaciente" class="nav-item">
-                    <li class="nav-link text-dark bg-light hover">
-                      <i class="fa fa-plus mr-3 text-primary" aria-hidden="true"></i>
-                      Añadir Paciente
-                    </li>
-                  </a>
                   <li class="nav-item">
                     <a asp-page="/Pacientes/ListaPacientes" class="nav-link text-dark bg-light">
                       <i class="fa fa-search mr-3 text-primary"></i>
@@ -65,12 +71,6 @@
             <div class="collapse" id="medicosContent">
               <div class="bg-light p-2">
                 <ul class="nav">
-                  <li class="nav-item">
-                    <a asp-page="/Medicos/NuevoMedico" class="nav-link text-dark bg-light hover">
-                      <i class="fa fa-plus mr-3 text-primary" aria-hidden="true"></i>
-                      Añadir Médico
-                    </a>
-                  </li>
                   <li class="nav-item">
                     <a asp-page="/Medicos/ListaMedicos" class="nav-link text-dark bg-light">
                       <i class="fa fa-search mr-3 text-primary"></i>
@@ -106,12 +106,110 @@
               </div>
             </div>
           </li>
+          <li class="nav-item">
+            <a asp-page="/Logout" class="nav-link text-dark bg-light">
+              <i class="fa fa-sign-out mr-3 text-primary fa-fw"></i>
+                Cerrar Sesión
+            </a>
+          </li>
         </ul>
+          } 
+          if (User.IsInRole("Paciente"))
+          {
+            <div class="py-4 px-3 mb-4 bg-light">
+          <div class="media d-flex align-items-center">
+            <img loading="lazy" src="~/assets/paciente.png" alt="icono" width="80" height="80" class="mr-3 rounded-circle img-thumbnail shadow-sm">
+            <div class="media-body">
+              <h4 class="m-0">Hospi En Casa</h4>
+              <p class="font-weight-normal text-muted mb-0">Paciente</p>
+            </div>
+          </div>
+        </div>
+      
+        <p class="text-gray font-weight-bold text-uppercase px-3 small pb-4 mb-0">Menú Principal</p>
+      
+        <ul class="nav flex-column bg-white mb-0">
+          <li class="nav-item">
+            <a asp-page="/index" class="nav-link text-dark bg-light">
+                      <i class="fa fa-th-large mr-3 text-primary fa-fw"></i>
+                      Inicio
+            </a>
+          </li>
+          <li class="nav-item">
+            <a asp-page="/VistaPacientes/MiInformacion" class="nav-link text-dark">
+                      <i class="fa fa-users mr-3 text-primary"></i>
+                      <span>Mi información</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a asp-page="/VistaPacientes/RegistroSignos" class="nav-link text-dark">
+                      <i class="fa fa-stethoscope mr-3 text-primary"></i>
+                      <span>Registro de signos vitales</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a asp-page="/VistaPacientes/Diagnostico" class="nav-link text-dark">
+                      <i class="fa fa-medkit mr-3 text-primary"></i>
+                      <span>Diagnostico</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a asp-page="/Logout" class="nav-link text-dark bg-light">
+              <i class="fa fa-sign-out mr-3 text-primary fa-fw"></i>
+                Cerrar Sesión
+            </a>
+          </li>
+        </ul>
+          } 
+          if(!signInManager.IsSignedIn(User)){
+            <div class="vertical-nav bg-white" id="sidebar">
+              <div class="py-4 px-3 mb-4 bg-light">
+                <div class="media d-flex align-items-center">
+                    <p class="text-blue mb-0 text-center">Por favor inicia sesión o registrate para ver el contenido</p>
+                </div>
+              </div>
+            
+              <p class="text-gray font-weight-bold text-uppercase px-3 small pb-4 mb-0">Menu Principal</p>
+            
+              <ul class="nav flex-column bg-white mb-0">
+                <li class="nav-item">
+                  <a asp-page="/Login" class="nav-link text-dark bg-light">
+                            <i class="fa fa-sign-in mr-3 text-primary fa-fw"></i>
+                            Iniciar Sesión
+                        </a>
+                </li>
+                <li class="nav-item">
+                  <a asp-page="/Registro" class="nav-link text-dark bg-light">
+                            <i class="fa fa-plus-square mr-3 text-primary fa-fw"></i>
+                            Registrarse
+                        </a>
+                </li>
+              </ul>
+              <small class="bottom">Hecho con &#10084; por el equipo 2</small>
+            </div>
+          }
+        }
         <small class="bottom">Hecho con &#10084; por el equipo 2</small>
       </div>
 
       <!-- Fin del menu vertical -->
     <div class="page-content d-flex justify-content-center">
+      <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-body">
+              <p>¿Estas Seguro que quieres cerrar sesion?</p>
+            </div>
+            <div class="modal-footer">
+              <form method="post">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal" asp-page-handler="DontLogout">Cancelar</button>
+                <button type="submit" class="btn btn-primary" asp-page-handler="Logout">Si!</button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+
         <main role="main" class="pb-3">
             @RenderBody()
         </main>

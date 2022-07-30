@@ -123,6 +123,7 @@ namespace HospiEnCasa.App.Persistencia.AppRepositorios
             var pacienteActualizar = (from f in _context.Pacientes.Where(p => p.IdPac == paciente.IdPaciente) select f).FirstOrDefault();
 
             if(pacienteActualizar != null){
+                pacienteActualizar.FechaNacimiento = paciente.FechaNacimiento;
                 pacienteActualizar.Direccion = paciente.Direccion;
                 pacienteActualizar.Ciudad = paciente.Ciudad;
                 pacienteActualizar.Latitud = paciente.Latitud;
@@ -151,6 +152,30 @@ namespace HospiEnCasa.App.Persistencia.AppRepositorios
                             };
             PacientesPer pacienteActualizadoPer = pacienteActualizado.FirstOrDefault();
             return pacienteActualizadoPer;
+        }
+        public PacientesPer ObtenerPacienteById(int IdPersona)
+        {
+            var pacientes = from p in _context.Pacientes
+                            from p1 in _context.Personas
+                            where p.IdPersona == IdPersona
+                            where p.IdPersona == p1.IdPersona
+                            select new PacientesPer()
+                            {
+                                IdPaciente = p.IdPac,
+                                IdPersona = p1.IdPersona,
+                                Id = p1.Id,
+                                Nombres = p1.Nombres,
+                                Apellidos = p1.Apellidos,
+                                Genero = p1.Genero,
+                                Telefono = p1.Telefono,
+                                FechaNacimiento = p.FechaNacimiento,
+                                Ciudad = p.Ciudad,
+                                Direccion = p.Direccion,
+                                Latitud = p.Latitud,
+                                Longitud = p.Longitud,
+                            };
+            PacientesPer pacientesPer = pacientes.FirstOrDefault();
+            return pacientesPer; 
         }
     }
 }

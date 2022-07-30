@@ -2,9 +2,17 @@
 @model IndexModel
 @{
     ViewData["Title"] = "Inicio";
+    @using Microsoft.AspNetCore.Identity;
+    @inject SignInManager<IdentityUser> signInManager;
 }
 
-<div class="box-container">
+@if (User.IsInRole("Paciente"))
+{
+    <div class="container d-flex justify-content-center mt-5">
+        <img class="banner" src="~/assets/bannernew.png"></img>
+    </div>
+} else {
+        <div class="box-container">
             <div class="box cyan">
                 <h2>Pacientes Actuales<h2/>
                 <div class="box-content">
@@ -26,4 +34,6 @@
                     <img src="~/assets/nurse.png" alt="" class="box-img">
                 </div>
             </div>
-</div>
+        </div>
+
+}

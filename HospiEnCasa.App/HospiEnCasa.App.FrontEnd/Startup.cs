@@ -1,3 +1,4 @@
+using System.Security.AccessControl;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,6 +12,7 @@ using Microsoft.Extensions.Hosting;
 using HospiEnCasa.App.Persistencia.Models;
 using HospiEnCasa.App.Persistencia.AppRepositorios;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.AspNetCore.Identity;
 
 namespace HospiEnCasa.App.FrontEnd
 {
@@ -38,7 +40,13 @@ namespace HospiEnCasa.App.FrontEnd
             services.AddTransient<IRepositorioSigno, RepositorioSigno>();
             services.AddTransient<IRepositorioAsignado, RepositorioAsignado>();
             services.AddTransient<IRepositorioHistorium, RepositorioHistorium>();
+            services.AddTransient<IRepositorioSugerencia, RepositorioSugerencia>();
             services.AddMemoryCache();
+
+            services.ConfigureApplicationCookie(options =>
+            {
+                options.LoginPath = "/Login";
+            });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -55,11 +63,14 @@ namespace HospiEnCasa.App.FrontEnd
                 app.UseHsts();
             }
 
+            app.UseStatusCodePagesWithReExecute("/Error");
+
             app.UseHttpsRedirection();
             app.UseStaticFiles();
 
             app.UseRouting();
 
+            app.UseAuthentication();
             app.UseAuthorization();
 
             app.UseEndpoints(endpoints =>

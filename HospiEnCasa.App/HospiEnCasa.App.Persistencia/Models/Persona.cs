@@ -21,7 +21,9 @@ namespace HospiEnCasa.App.Persistencia.Models
         public string Apellidos { get; set; }
         public string Telefono { get; set; }
         public string Genero { get; set; }
+        public string IdUsuario { get; set; }
 
+        public virtual AspNetUser IdUsuarioNavigation { get; set; }
         public virtual ICollection<Enfermero> Enfermeros { get; set; }
         public virtual ICollection<Familiar> Familiars { get; set; }
         public virtual ICollection<Medico> Medicos { get; set; }

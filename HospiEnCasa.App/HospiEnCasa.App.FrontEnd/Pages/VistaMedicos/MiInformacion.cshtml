@@ -1,0 +1,99 @@
+@page
+@model HospiEnCasa.App.FrontEnd.Pages.VistaMedicos.MiInformacion
+@{
+    ViewData["Title"] = "Mi Informacion";
+}
+
+    <div class="container mt-5">
+        <div class="card user-card-full">
+            <div class="row m-l-0 m-r-0">
+                <div class="col-sm-4 bg-card user-profile">
+                    <div class="card-block text-center text-white">
+                        <div class="m-b-25">
+                            <img src="~/assets/doctor.png" class="img-radius" alt="User-Profile-Image">
+                        </div>
+                        <h6 class="f-w-600 text-dark">@Model.Medico.Nombres  @Model.Medico.Apellidos</h6>
+                        <p class="text-dark">Médico</p>
+                        <div class="mt-3">
+                            <a asp-page="/VistaMedicos/ActualizarInformacion" asp-route-IdMedico="@Model.Medico.IdMedico" class="btn btn-primary btn-sm btn-round">
+                                <i class="fa fa-cog mr-1"></i>
+                                Editar Información
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-8">
+                    <div class="card-block">
+                        <h6 class="m-b-20 p-b-5 b-b-default f-w-600">Información del Médico</h6>
+                        <div class="row">
+                            <div class="col-sm-6">
+                                <p class="m-b-10 f-w-600">Nombres</p>
+                                <h6 class="text-muted f-w-400">@Model.Medico.Nombres</h6>
+                            </div>
+                            <div class="col-sm-6">
+                                <p class="m-b-10 f-w-600">Apellidos</p>
+                                <h6 class="text-muted f-w-400">@Model.Medico.Apellidos</h6>
+                            </div>
+                        </div>
+                        <div class="row mt-3">
+                            <div class="col-sm-6">
+                                <p class="m-b-10 f-w-600">Documento de Identidad</p>
+                                <h6 class="text-muted f-w-400">@Model.Medico.Id</h6>
+                            </div>
+                            <div class="col-sm-6">
+                                <p class="m-b-10 f-w-600">Teléfono</p>
+                                <h6 class="text-muted f-w-400">@Model.Medico.Telefono</h6>
+                            </div>
+                        </div>
+                        <div class="row mt-3">
+                            <div class="col-sm-6 mt-2">
+                                <p class="m-b-10 f-w-600">Especialidad</p>
+                                <h6 class="text-muted f-w-400">@Model.Medico.Especialidad</h6>
+                            </div>
+                            <div class="col-sm-6 mt-2">
+                                <p class="m-b-10 f-w-600">Registro Médico</p>
+                                <h6 class="text-muted f-w-400">@Model.Medico.Registro</h6>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Lista de pacientes -->
+    <div class="container bg-white w-auto p-3 m-5">
+        <div>
+            <h5 class="f-w-1500 font-weight-bold text-primary text-center divider line one-line">
+                Pacientes asignados a @Model.Medico.Nombres</<h5>
+        </div>
+        <table
+            id="table1"
+            class="table table-sm table-striped text-center table-bordered h-75"
+            style="width: 100%">
+            <thead class="text-center">
+                <tr class="table-success">
+                    <th>Documento</th>
+                    <th>Nombres</th>
+                    <th>Apellidos</th>
+                    <th>Género</th>
+                    <th>Teléfono</th>
+                    <th>Ir Paciente</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var paciente in Model.Pacientes)
+                {
+                    <tr>
+                        <td>@paciente.Id</td>
+                        <td>@paciente.Nombres</td>
+                        <td>@paciente.Apellidos</td>
+                        <td style="text-transform: capitalize;">@paciente.Genero</td>
+                        <td>@paciente.Telefono</td>
+                        <td class="d-fle align-items-center">
+                            <a class="link-a" asp-page="/Pacientes/DetallePaciente" asp-route-IdPaciente="@paciente.IdPaciente" class="ml-2"><i class="fa fa-cog" aria-hidden="true"></i></a>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>

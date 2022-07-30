@@ -56,6 +56,20 @@ namespace HospiEnCasa.App.Persistencia.AppRepositorios
         {
             return _context.Personas.FirstOrDefault(p => p.IdPersona == id);
         }
+        public Persona ObtenerPorString(string Id)
+        {
+            var persona = from p in _context.Personas.Where(p => p.IdUsuario == Id) select p;
+            return persona.FirstOrDefault();
+        }
+        public void ActualizarMedico(MedicosPer medico)
+        {
+            var personaEncontrada = (from f in _context.Personas.Where(p => p.IdPersona == medico.IdPersona) select f).FirstOrDefault();
+            if(personaEncontrada != null){
+                personaEncontrada.Telefono = medico.Telefono;
+                _context.Update(personaEncontrada);
+                _context.SaveChanges();
+            }
+        }
     }
 }
 
