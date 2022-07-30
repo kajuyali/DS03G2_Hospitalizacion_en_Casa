@@ -23,6 +23,7 @@ namespace HospiEnCasa.App.FrontEnd.Pages.Pacientes
         public Familiar Familiar { get; set; }
         [BindProperty]
         public PacientesPer Paciente { get; set; }
+        public int IdPacient  { get; set; }
 
         public NuevoFamiliar(ILogger<NuevoFamiliar> logger, IRepositorioPersona repositorioPersona, IRepositorioPaciente repositorioPaciente, IRepositorioFamiliar repositorioFamiliar)
         {
@@ -35,6 +36,7 @@ namespace HospiEnCasa.App.FrontEnd.Pages.Pacientes
         public IActionResult OnGet(int IdPaciente)
         {
             Paciente = repositorioPaciente.ObtenerPaciente(IdPaciente);
+            IdPacient = IdPaciente;
             if (Paciente == null)
             {
                 return RedirectToPage("/Pacientes/DetallePaciente");

@@ -4,6 +4,42 @@
     ViewData["Title"] = "Detalle De Paciente";
 }
 
+<!-- Top Menu Lista Pacientes a Detalle Paciente -->
+<header class >
+      <div class="container-fluid">
+      <head>
+        <title></title>
+        <link rel="shortcut icon" href="">
+      </head>
+      @if (Model.MenuPrev == "ListaPacientes")
+      {
+        <body>
+          <ul class="breadcrumbs">
+            <li class=breadcrumbs__item>
+              <a href="/Pacientes/ListaPacientes" class="breadcrumbs__link">Lista Pacientes</a>
+            </li>
+            <li class=breadcrumbs__item>
+              <a href="" class="breadcrumbs__link--active">Paciente</a>
+            </li>
+          </ul>
+        </body>
+      }
+      @if (Model.MenuPrev == "Medico")
+      {
+        <body>
+          <ul class="breadcrumbs">
+            <li class=breadcrumbs__item>
+              <a asp-page="/Medicos/DetalleMedico" asp-route-IdMedico="@Model.IdMedico" class="breadcrumbs__link">Médico</a>
+            </li>
+            <li class=breadcrumbs__item>
+              <a href="" class="breadcrumbs__link--active">Paciente</a>
+            </li>
+          </ul>
+        </body>
+      }
+    </div>
+</header>
+<!-- Detalle Paciente -->
 <div>
     <div class="container mt-5">
         <div class="card user-card-full">

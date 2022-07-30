@@ -33,7 +33,7 @@
                 <td style="text-transform: capitalize;">@paciente.Genero</td>
                 <td>@paciente.FechaNacimiento</td>
                 <td class="d-fle align-items-center">
-                  <a asp-page="/Pacientes/DetallePaciente" asp-route-IdPaciente="@paciente.IdPaciente" class="ml-2"><i class="fa fa-cog link-a" aria-hidden="true"></i></a>
+                  <a asp-page="/Pacientes/DetallePaciente" asp-route-IdPaciente="@paciente.IdPaciente" asp-route-MenuFrom="@Model.MenuFrom" class="ml-2"><i class="fa fa-cog link-a" aria-hidden="true"></i></a>
                   <a href="#" class="ml-4"><i class="fa fa-trash-o link-a" aria-hidden="true"></i></a>
                 </td>
             </tr>

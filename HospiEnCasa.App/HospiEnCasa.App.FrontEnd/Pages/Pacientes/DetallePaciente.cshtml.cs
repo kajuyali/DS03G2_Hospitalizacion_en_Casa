@@ -32,6 +32,8 @@ namespace HospiEnCasa.App.FrontEnd.Pages.Pacientes
         public Persona Persona { get; set; }
         public Historium Historia { get; set; }
         public MedicosPer Medico { get; set; }
+        public string MenuPrev { get; set; }
+        public int IdMedico {get; set;}
 
         public DetallePaciente(ILogger<DetallePaciente> logger, IRepositorioPaciente repositorioPaciente, IRepositorioFamiliar repositorioFamiliar, IRepositorioPersona repositorioPersona, IRepositorioMedico repositorioMedico, IRepositorioSigno repositorioSigno, IRepositorioHistorium repositorioHistorium, UserManager<IdentityUser> userManager)
         {
@@ -45,7 +47,7 @@ namespace HospiEnCasa.App.FrontEnd.Pages.Pacientes
             _userManager = userManager;
         }
 
-        public IActionResult OnGet(int IdPaciente)
+        public IActionResult OnGet(int IdPaciente, string MenuFrom)
         {
             var userId = _userManager.GetUserId(User);
             Persona = repositorioPersona.ObtenerPorString(userId);
@@ -56,6 +58,11 @@ namespace HospiEnCasa.App.FrontEnd.Pages.Pacientes
             MedicoAsignado = repositorioPaciente.ObtenerMedicoAsignado(IdPaciente);
             RegistroSignosPaciente = repositorioSigno.ObtenerHistorialSignosPaciente(IdPaciente);
             RegistroHistoriaPaciente = repositorioHistorium.ObtenerHistoriaPaciente(IdPaciente);
+            MenuPrev = MenuFrom;
+            if(MenuFrom == "Medico") {
+                IdMedico = Medico.IdMedico;
+            }
+
             if (Paciente == null) {
                 RedirectToPage("/Pacientes/DetallePaciente", new { IdPaciente = IdPaciente });
             }

@@ -897,3 +897,27 @@ button.ghost {
   text-align: center;
   margin-bottom: 1rem;
 }
+
+/* BreadCrumbs */
+.breadcrumbs {
+  padding: 10px;
+  font-family: sans-serif;
+}
+.breadcrumbs__item {
+  display: inline-block;
+}
+.breadcrumbs__item:not(:last-of-type)::after {
+  content: '/';
+  margin: 0 5px;
+  color: #0000FF;
+}
+.breadcrumbs__link {
+  text-decoration: none;
+  color: #999999;
+}
+.beadcrumbs__link:hover {
+  text-decoration: underline;
+}
+.breadcrumbs__link--active {
+  color: #009578;
+}
