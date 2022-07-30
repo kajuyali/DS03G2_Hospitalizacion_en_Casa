@@ -7,9 +7,11 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.Extensions.Logging;
 using HospiEnCasa.App.Persistencia.Models;
 using HospiEnCasa.App.Persistencia.AppRepositorios;
+using Microsoft.AspNetCore.Authorization;
 
 namespace HospiEnCasa.App.FrontEnd.Pages.Medicos
 {
+    [Authorize(Roles = "Medico, Paciente")]
     public class DetalleMedico : PageModel
     {
         private readonly ILogger<DetalleMedico> _logger;
