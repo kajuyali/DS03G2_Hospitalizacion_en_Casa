@@ -1,0 +1,31 @@
+@page
+@model HospiEnCasa.App.FrontEnd.Pages.Login
+@{
+    ViewData["Title"] = "Login";
+}
+
+<div class="containernew mt-5" id="container">
+    <div class="form-container sign-in-container">
+        <form class="form-log" method="post">
+            <div>
+                <h1 class="log-title mb-3">Iniciar Sesión</h1>
+                <input asp-for="LoginUser.Correo" class="input-log" type="text" placeholder="Correo" />
+                <input asp-for="LoginUser.Contraseña" class="input-log" type="password" placeholder="Contraseña" />
+                <input asp-for="LoginUser.Recordarme" type="checkbox" id="remember" /> 
+                <label asp-for="LoginUser.Recordarme" for="remember">Recordarme</label>
+                <button class="btn-log" type="submit">Iniciar Sesión</button>
+            </div>
+        </form>
+    </div>
+    <div class="overlay-container">
+        <div class="overlay">
+            <div class="overlay-panel overlay-right">
+                <h1 class="log-title"">Hola, Amig&#064;!</h1>
+                <p class="p-log">Ingresa los datos necesarios para registrarte en el sistema</p>
+                <a asp-page="/Account/Register" >
+                    <div class="ghost btn-log">Registrarme</div>
+                </a>
+            </div>
+        </div>
+    </div>
+</div>

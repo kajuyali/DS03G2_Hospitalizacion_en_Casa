@@ -60,7 +60,7 @@ namespace HospiEnCasa.App.Persistencia.AppRepositorios
             _context.SaveChanges();
             return medico;
         }
-        public Medico Actualizar(Medico medico)
+        public MedicosPer Actualizar(MedicosPer medico)
         {
             var medicoEncontrado = _context.Medicos.FirstOrDefault(m => m.IdMedico == medico.IdMedico);
             if(medicoEncontrado != null){
@@ -69,7 +69,24 @@ namespace HospiEnCasa.App.Persistencia.AppRepositorios
             }
             _context.Medicos.Update(medicoEncontrado);
             _context.SaveChanges();
-            return medico;
+            var medicoActualizado = from p in _context.Medicos
+                                    from p1 in _context.Personas
+                                    where p.IdMedico == medico.IdMedico
+                                    where p.IdPersona == p1.IdPersona
+                                    select new MedicosPer()
+                                    {
+                                        IdMedico = p.IdMedico,
+                                        IdPersona = p1.IdPersona,
+                                        Id = p1.Id,
+                                        Nombres = p1.Nombres,
+                                        Apellidos = p1.Apellidos,
+                                        Genero = p1.Genero,
+                                        Telefono = p1.Telefono,
+                                        Especialidad = p.Especialidad,
+                                        Registro = p.Registro
+                                    };
+            MedicosPer medicoPer = medicoActualizado.FirstOrDefault();
+            return medicoPer;
         }
         public void Eliminar(int id)
         {
@@ -104,6 +121,27 @@ namespace HospiEnCasa.App.Persistencia.AppRepositorios
                             };
             IEnumerable<PacientesPer> pacientesPer = asignados;
             return pacientesPer;
+        }
+        public MedicosPer ObtenerMedicoById(int IdPersona)
+        {
+            var medico = from p in _context.Medicos
+                        from p1 in _context.Personas
+                        where p.IdPersona == IdPersona
+                        where p.IdPersona == p1.IdPersona
+                        select new MedicosPer()
+                         {
+                            IdMedico = p.IdMedico,
+                            IdPersona = p1.IdPersona,
+                            Id = p1.Id,
+                            Nombres = p1.Nombres,
+                            Apellidos = p1.Apellidos,
+                            Genero = p1.Genero,
+                            Telefono = p1.Telefono,
+                            Especialidad = p.Especialidad,
+                            Registro = p.Registro
+                         };
+            MedicosPer medicoPer = medico.FirstOrDefault();
+            return medicoPer;
         }
     }
 }

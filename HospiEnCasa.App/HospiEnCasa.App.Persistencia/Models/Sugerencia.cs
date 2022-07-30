@@ -10,10 +10,9 @@ namespace HospiEnCasa.App.Persistencia.Models
         public int IdSugerencia { get; set; }
         public string Descripcion { get; set; }
         public DateTime Fecha { get; set; }
-        public int IdHistoria { get; set; }
+        public int IdPaciente { get; set; }
         public int IdMedico { get; set; }
-
-        public virtual Historium IdHistoriaNavigation { get; set; }
         public virtual Medico IdMedicoNavigation { get; set; }
+        public virtual Paciente IdPacienteNavigation { get; set; }
     }
 }

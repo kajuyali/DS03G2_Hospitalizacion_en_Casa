@@ -6,9 +6,9 @@ using HospiEnCasa.App.Persistencia.Models;
 
 namespace HospiEnCasa.App.Persistencia.AppRepositorios
 {
-    public interface IRepositorioHistorium
+    public interface IRepositorioSugerencia
     {
-        IEnumerable<Historium> ObtenerHistoriaPaciente(int IdPaciente);
-        Historium CrearDiagnostico(Historium historia);
+        Sugerencia CrearSugerencia(Sugerencia sugerencia);
+        IEnumerable<Sugerencia> ObtenerSugerencias(int IdPaciente);
     }
 }

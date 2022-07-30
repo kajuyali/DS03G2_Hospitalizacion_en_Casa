@@ -1,0 +1,20 @@
+﻿@page
+@model LogoutModel
+@{
+    ViewData["Title"] = "Log out";
+}
+
+<div class="container">
+    <div class="card p-2 mt-5">
+        <div class="card-body">
+            <h5 class="card-title text-center">Cerrar Sesion</h5>
+            <form method="post">
+                <h2 class="form-title">¿Estas seguro que deseas cerrar sesion?</h2>
+                <div class="form-group d-flex justify-content-center">
+                    <button type="submit" class="btn btn-primary mr-3">Si</button>
+                    <a asp-page="/Index" class="btn btn-secondary">No</a>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

@@ -14,5 +14,7 @@ namespace HospiEnCasa.App.Persistencia.AppRepositorios
         void ActualizarPaciente(PacientesPer paciente);
         void Eliminar(int id);
         Persona ObtenerPorId(int id);
+        Persona ObtenerPorString(string Id);
+        void ActualizarMedico(MedicosPer medico);
     }
 }
