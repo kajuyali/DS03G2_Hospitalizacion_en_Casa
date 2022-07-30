@@ -15,6 +15,7 @@ namespace HospiEnCasa.App.FrontEnd.Pages.Pacientes
         private readonly ILogger<ListaPacientes> _logger;
         private readonly IRepositorioPaciente repositorioPaciente;
         public IEnumerable<PacientesPer> Pacientes { get; set; }
+        public string MenuFrom { get; set; } = "ListaPacientes";
         public ListaPacientes(ILogger<ListaPacientes> logger, IRepositorioPaciente repositorioPaciente)
         {
             _logger = logger;

@@ -3,6 +3,26 @@
 @{
     ViewData["Title"] = "Detalle del Médico";
 }
+<!-- Top Menu Lista Medicos a Detalle Medico -->
+<header class >
+      <div class="container-fluid">
+      <head>
+        <title></title>
+        <link rel="shortcut icon" href="">
+      </head>
+        <body>
+          <ul class="breadcrumbs">
+            <li class=breadcrumbs__item>
+              <a href="/Medicos/ListaMedicos" class="breadcrumbs__link">Lista Médicos</a>
+            </li>
+            <li class=breadcrumbs__item>
+              <a href="" class="breadcrumbs__link--active">Médico</a>
+            </li>
+          </ul>
+        </body>
+    </div>
+</header>
+<!-- Detalle Médico -->
 
 <div>
     <div class="container mt-5">
@@ -90,7 +110,7 @@
                         <td style="text-transform: capitalize;">@paciente.Genero</td>
                         <td>@paciente.Telefono</td>
                         <td class="d-fle align-items-center">
-                            <a class="link-a" asp-page="/Pacientes/DetallePaciente" asp-route-IdPaciente="@paciente.IdPaciente" class="ml-2"><i class="fa fa-cog" aria-hidden="true"></i></a>
+                            <a class="link-a" asp-page="/Pacientes/DetallePaciente" asp-route-IdPaciente="@paciente.IdPaciente" asp-route-MenuFrom="@Model.MenuFrom" class="ml-2"><i class="fa fa-cog" aria-hidden="true"></i></a>
                         </td>
                     </tr>
                 }

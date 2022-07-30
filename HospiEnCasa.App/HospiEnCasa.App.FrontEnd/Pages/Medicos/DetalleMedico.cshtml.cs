@@ -16,6 +16,7 @@ namespace HospiEnCasa.App.FrontEnd.Pages.Medicos
         private readonly IRepositorioMedico repositorioMedico;
         public MedicosPer Medico { get; set; }
         public IEnumerable<PacientesPer> Pacientes { get; set; }
+        public string MenuFrom { get; set; } = "Medico";
 
 
         public DetalleMedico(ILogger<DetalleMedico> logger, IRepositorioMedico repositorioMedico)
@@ -24,7 +25,7 @@ namespace HospiEnCasa.App.FrontEnd.Pages.Medicos
             this.repositorioMedico = repositorioMedico;
         }
 
-        public IActionResult OnGet(int IdMedico)
+        public IActionResult OnGet(int IdMedico, string MenuFromMed)
         {
             Medico = repositorioMedico.ObtenerMedico(IdMedico);
             Pacientes = repositorioMedico.ObtenerPacientesAsignados(IdMedico);

@@ -3,6 +3,25 @@
 @{
     ViewData["Title"] = "Nuevo Familiar";
 }
+<!-- Top Menu Familiar a Detalle Paciente -->
+<header class >
+      <div class="container-fluid">
+      <head>
+        <link rel="shortcut icon" href="">
+      </head>
+        <body>
+          <ul class="breadcrumbs">
+            <li class=breadcrumbs__item>
+              <a asp-page="/Pacientes/DetallePaciente" asp-route-IdPaciente="@Model.IdPacient" class="breadcrumbs__link">Paciente</a>
+            </li>
+            <li class=breadcrumbs__item>
+              <a href="" class="breadcrumbs__link--active">Familiar</a>
+            </li>
+          </ul>
+        </body>
+    </div>
+</header>
+<!--Familiar -->
 
         <div class="card p-2 m-5">
           <div class="card-body">
