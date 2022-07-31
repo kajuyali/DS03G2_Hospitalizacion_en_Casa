@@ -20,12 +20,8 @@
           if (signInManager.IsSignedIn(User) & User.IsInRole("Medico"))
           {
             <div class="py-4 px-3 mb-4 bg-light">
-          <div class="media d-flex align-items-center">
-            <img loading="lazy" src="~/assets/doctor.png" alt="icono" width="80" height="80" class="mr-3 rounded-circle img-thumbnail shadow-sm">
-            <div class="media-body">
-              <h4 class="m-0">Hospi En Casa</h4>
-              <p class="font-weight-normal text-muted mb-0">Medico</p>
-            </div>
+          <div class="media d-flex align-items-center justify-content-center">
+            <img loading="lazy" src="~/assets/Logo.svg" alt="icono" width="100" height="100" class="mr-3 rounded-circle img-thumbnail logo shadow-sm">
           </div>
         </div>
       
@@ -117,12 +113,8 @@
           if (User.IsInRole("Paciente"))
           {
             <div class="py-4 px-3 mb-4 bg-light">
-          <div class="media d-flex align-items-center">
-            <img loading="lazy" src="~/assets/paciente.png" alt="icono" width="80" height="80" class="mr-3 rounded-circle img-thumbnail shadow-sm">
-            <div class="media-body">
-              <h4 class="m-0">Hospi En Casa</h4>
-              <p class="font-weight-normal text-muted mb-0">Paciente</p>
-            </div>
+          <div class="media d-flex align-items-center justify-content-center">
+            <img loading="lazy" src="~/assets/Logo.svg" alt="icono" width="100" height="100" class="mr-3 rounded-circle img-thumbnail logo shadow-sm">
           </div>
         </div>
       
@@ -164,10 +156,10 @@
           if(!signInManager.IsSignedIn(User)){
             <div class="vertical-nav bg-white" id="sidebar">
               <div class="py-4 px-3 mb-4 bg-light">
-                <div class="media d-flex align-items-center">
-                    <p class="text-blue mb-0 text-center">Por favor inicia sesión o registrate para ver el contenido</p>
-                </div>
+              <div class="media d-flex align-items-center justify-content-center">
+                <img loading="lazy" src="~/assets/Logo.svg" alt="icono" width="100" height="100" class="mr-3 rounded-circle img-thumbnail logo shadow-sm">
               </div>
+            </div>
             
               <p class="text-gray font-weight-bold text-uppercase px-3 small pb-4 mb-0">Menu Principal</p>
             

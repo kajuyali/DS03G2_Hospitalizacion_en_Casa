@@ -7,9 +7,11 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.Extensions.Logging;
 using HospiEnCasa.App.Persistencia.Models;
 using HospiEnCasa.App.Persistencia.AppRepositorios;
+using Microsoft.AspNetCore.Authorization;
 
 namespace HospiEnCasa.App.FrontEnd.Pages.Familiares
 {
+    [Authorize(Roles = "Paciente, Medico")]
     public class DetalleFamiliar : PageModel
     {
         private readonly ILogger<DetalleFamiliar> _logger;
@@ -28,7 +30,7 @@ namespace HospiEnCasa.App.FrontEnd.Pages.Familiares
             Familiar = repositorioFamiliar.ObtenerFamiliar(IdPaciente);
             if (Familiar == null)
             {
-                RedirectToPage("/Pacientes/DetallePaciente", new { IdPaciente = IdPaciente });
+                RedirectToPage("/VistaPacientes/MiInformacion");
             }
             return Page();
         }
