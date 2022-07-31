@@ -921,3 +921,7 @@ button.ghost {
 .breadcrumbs__link--active {
   color: #009578;
 }
+
+.logo {
+  width: 85%
+}

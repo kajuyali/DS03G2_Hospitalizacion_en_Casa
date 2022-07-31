@@ -7,9 +7,11 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.Extensions.Logging;
 using HospiEnCasa.App.Persistencia.AppRepositorios;
 using HospiEnCasa.App.Persistencia.Models;
+using Microsoft.AspNetCore.Authorization;
 
 namespace HospiEnCasa.App.FrontEnd.Pages.Pacientes
 {
+    [Authorize(Roles = "Paciente")]
     public class NuevoFamiliar : PageModel
     {
 
@@ -39,7 +41,7 @@ namespace HospiEnCasa.App.FrontEnd.Pages.Pacientes
             IdPacient = IdPaciente;
             if (Paciente == null)
             {
-                return RedirectToPage("/Pacientes/DetallePaciente");
+                return RedirectToPage("/VistaPaciente/MiInformacion");
             }
             
             return Page();
@@ -55,7 +57,7 @@ namespace HospiEnCasa.App.FrontEnd.Pages.Pacientes
             Familiar.IdPersona = Persona.IdPersona;
             Familiar.IdPaciente = Paciente.IdPaciente;
             repositorioFamiliar.Crear(Familiar);
-            return RedirectToPage("/Pacientes/DetallePaciente", new {IdPaciente = Paciente.IdPaciente});
+            return RedirectToPage("/VistaPacientes/MiInformacion");
         }
     }
 }
